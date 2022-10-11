@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BG Login</title>
+	<link rel="stylesheet" href="/assets/add/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/add/img/1.jpg">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+	<img src="assets/add/img/masjid.jpg" class="bg-pos">
+	<div class="log-form">
+		<img src="assets/add/img/avatar5.png" class="avatar">
+		<h2>Login</h2>
+		<form action="<?= base_url('cek-login'); ?>" method="post">
+			<div class="input-box">
+				<i class="fa fa-user"></i>
+			<label for="username"><b>Username</b></label>
+			<input type="text" name="uname" placeholder="Enter Username" required>
+			</div>
+			<div class="input-box">
+				<i class="fa fa-key"></i>
+			<label for="password">Password</label>
+			<input type="password" name="password" placeholder="Enter Password" required>
+			<i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+			</div>
+			<br>
+			<input type="submit" value="Log in">
+		</form>
+		<?= $this->renderSection('log-form') ?>
+	</div>
+</body>
+</html>
