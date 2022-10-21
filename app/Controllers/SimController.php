@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\M_Login;
+use App\Models\M_kegiatan;
 
 class SimController extends BaseController
 {
@@ -33,5 +34,16 @@ class SimController extends BaseController
     public function dashboard()
     {
         return view('admin/dashboard');
+    }
+    public function kegiatan()
+    {
+        $kegiatanModel = new M_kegiatan();
+        $kegiatan = $kegiatanModel->findAll();
+        $data = [
+            'title' => 'Kegiatan',
+            'kegiatan' => $kegiatan
+        ];
+
+        return view('admin/kegiatan', $data);
     }
 }
