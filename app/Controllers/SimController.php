@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
-
+use App\Models\M_pengumuman;
 class SimController extends BaseController
 {
     public function index()
@@ -45,5 +45,32 @@ class SimController extends BaseController
         ];
 
         return view('admin/kegiatan', $data);
+    }
+
+    public function pengumuman()
+    {
+        $pengumumanModel = new M_pengumuman();
+        $pengumuman = $pengumumanModel->findAll();
+        $data = [
+            'title' => 'Pengumuman',
+            'pengumuman' => $pengumuman
+        ];
+
+        return view('admin/pengumuman', $data);
+    }
+
+    public function ckegiatan()
+    {  
+        return view('admin/crud/ckegiatan');
+    }
+
+    public function cpengumuman()
+    {  
+        return view('admin/crud/cpengumuman');
+    }
+
+    public function profile()
+    {  
+        return view('admin/profile');
     }
 }
