@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
+use App\Models\M_kasmasuk;
+use App\Models\M_kaskeluar;
+
 class SimController extends BaseController
 {
     public function index()
@@ -46,8 +49,7 @@ class SimController extends BaseController
 
         return view('admin/kegiatan', $data);
     }
-
-    public function pengumuman()
+        public function pengumuman()
     {
         $pengumumanModel = new M_pengumuman();
         $pengumuman = $pengumumanModel->findAll();
@@ -58,18 +60,38 @@ class SimController extends BaseController
 
         return view('admin/pengumuman', $data);
     }
+        public function kasmasuk()
+    {
+        $kasmasukModel = new M_kasmasuk();
+        $kasmasuk = $kasmasukModel->findAll();
+        $data = [
+            'title' => 'Kasmasuk',
+            'kasmasuk' => $kasmasuk
+        ];
 
-    public function ckegiatan()
-    {  
+        return view('admin/kasmasuk', $data);
+    }
+
+    public function kaskeluar()
+    {
+        $kaskeluarModel = new M_kaskeluar();
+        $kaskeluar = $kaskeluarModel->findAll();
+        $data = [
+            'title' => 'Kaskeluar',
+            'kaskeluar' => $kaskeluar
+        ];
+
+        return view('admin/kaskeluar', $data);
+    }
+        public function ckegiatan()
+    {
         return view('admin/crud/ckegiatan');
     }
-
-    public function cpengumuman()
-    {  
+        public function cpengumuman()
+    {
         return view('admin/crud/cpengumuman');
     }
-
-    public function profile()
+        public function profile()
     {  
         return view('admin/profile');
     }
