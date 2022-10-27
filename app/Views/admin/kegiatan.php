@@ -38,7 +38,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Control pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="<?= base_url('dashboard')?>">
+          <a class="nav-link" href="<?= base_url('dashboard')?>">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="kegiatan">
+          <a class="nav-link active" href="kegiatan">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="http://localhost:8080/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -111,6 +111,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Kegiatan</h6>
+                <a href="ckegiatan"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

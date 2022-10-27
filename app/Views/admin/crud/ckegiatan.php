@@ -112,7 +112,7 @@
             <div class="card-header pb-0">
               <h6>Tambah Data Disini</h6>
             </div>
-<form action="" >
+  <form action="/admin/save-kegiatan" method="post">
   <div class="form-group">
     <label for="nama_ustad">Nama Ustad</label>
     <input type="text" class="form-control" id="nama_ustad" name="nama_ustad">

@@ -5,9 +5,6 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
-use App\Models\M_kasmasuk;
-use App\Models\M_kaskeluar;
-
 class SimController extends BaseController
 {
     public function index()
@@ -49,7 +46,8 @@ class SimController extends BaseController
 
         return view('admin/kegiatan', $data);
     }
-        public function pengumuman()
+
+    public function pengumuman()
     {
         $pengumumanModel = new M_pengumuman();
         $pengumuman = $pengumumanModel->findAll();
@@ -60,38 +58,65 @@ class SimController extends BaseController
 
         return view('admin/pengumuman', $data);
     }
-        public function kasmasuk()
-    {
-        $kasmasukModel = new M_kasmasuk();
-        $kasmasuk = $kasmasukModel->findAll();
-        $data = [
-            'title' => 'Kasmasuk',
-            'kasmasuk' => $kasmasuk
-        ];
 
-        return view('admin/kasmasuk', $data);
+    public function save_p()
+    {
+        if (!$this->validate([
+            'judul_pengumuman' => 'required',
+            'isi_pengumuman' => 'required'
+         ])) {
+            return redirect()->to('/cpengumuman');
+         }
+   
+         $model = new M_pengumuman();
+   
+         $data = [
+            'judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
+            'isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
+            'tanggal' => $this->request->getPost('tanggal'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/pengumuman');
+    }
+    
+    public function save_k()
+    {
+        if (!$this->validate([
+            'nama_ustad' => 'required',
+            'nama_kajian' => 'required',
+            'hari' => 'required',
+            'judul_kajian' => 'required'
+         ])) {
+            return redirect()->to('/ckegiatan');
+         }
+   
+         $model = new M_kegiatan();
+   
+         $data = [
+            'nama_ustad' => $this->request->getPost('nama_ustad'),
+            'nama_kajian' => $this->request->getPost('nama_kajian'),
+            'hari' => $this->request->getPost('hari'),
+            'judul_kajian' => $this->request->getPost('judul_kajian'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/kegiatan');
     }
 
-    public function kaskeluar()
-    {
-        $kaskeluarModel = new M_kaskeluar();
-        $kaskeluar = $kaskeluarModel->findAll();
-        $data = [
-            'title' => 'Kaskeluar',
-            'kaskeluar' => $kaskeluar
-        ];
-
-        return view('admin/kaskeluar', $data);
-    }
-        public function ckegiatan()
-    {
+    public function ckegiatan()
+    {  
         return view('admin/crud/ckegiatan');
     }
-        public function cpengumuman()
-    {
+
+    public function cpengumuman()
+    {  
         return view('admin/crud/cpengumuman');
     }
-        public function profile()
+
+    public function profile()
     {  
         return view('admin/profile');
     }

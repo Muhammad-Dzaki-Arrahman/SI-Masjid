@@ -41,14 +41,12 @@ $routes->get('/dashboard', 'SimController::dashboard');
 $routes->get('/kegiatan', 'SimController::kegiatan');
 $routes->get('/pengumuman', 'SimController::pengumuman');
 $routes->get('/profile', 'SimController::profile');
-$routes->get('/kasmasuk', 'SimController::kasmasuk');
-$routes->get('/kaskeluar', 'SimController::kaskeluar');
 $routes->post('/cek-login', 'SimController::cek_login');
 $routes->post('/dashboard', 'SimController::dashboard');
 $routes->get('/ckegiatan', 'SimController::ckegiatan');
-$routes->post('/storekgt', 'CRUDController::storekgt');
 $routes->get('/cpengumuman', 'SimController::cpengumuman');
-$routes->post('/storepgn', 'CRUDController::storepgn');
+$routes->post('/admin/save-pengumuman', 'SimController::save_p');
+$routes->post('/admin/save-kegiatan', 'SimController::save_k');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

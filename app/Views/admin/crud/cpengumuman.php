@@ -112,18 +112,18 @@
             <div class="card-header pb-0">
               <h6>Tambah Data Disini</h6>
             </div>
-<form action="">
+<form action="/admin/save-pengumuman" method="post">
   <div class="form-group">
-    <label for="Judul_Pengumuman">Judul Pengumuman</label>
-    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman">
+    <label for="judul_pengumuman">Judul Pengumuman</label>
+    <input type="text" class="form-control" id="judul_pengumuman" name="judul_pengumuman">
   </div>
   <div class="form-group">
-    <label for="Isi_Pengumuman">Isi Pengumuman</label>
-    <input type="text" class="form-control" id="Isi_Pengumuman" name="Isi_Pengumuman">
+    <label for="isi_pengumuman">Isi Pengumuman</label>
+    <input type="text" class="form-control" id="isi_pengumuman" name="isi_pengumuman">
   </div>
     <div class="form-group">
-    <label for="Tanggal">Tanggal</label>
-    <input type="date" class="form-control" id="Tanggal" name="Tanggal">
+    <label for="tanggal">Tanggal</label>
+    <input type="date" class="form-control" id="tanggal" name="tanggal">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -1,3 +1,3 @@
-<?= $this->extend('temp_login')?>
+<?= $this->extend('login')?>
 <?= $this->section('log-form')?>
 <?= $this->endSection() ?>

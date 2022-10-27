@@ -6,16 +6,17 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class M_pengumuman extends Model {
-        protected $table = 'tbl_pengumuman';
+    
+    protected $table            = 'tbl_pengumuman';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['judul_pengumuman', 'isi_pengumuman','tanggal'];
 
-        public function getPengumuman($where = false){
-            if($where === false){
-                return $this->findAll();
-            }
-            else{
-                return $this->getWhere($where);
-            }
-        }
+    // Dates
+    protected $useTimestamps = false;
 
 }
 

@@ -2,15 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 }
-.bg-pos{
-	width: 1366px;
-	height: 621px;
-	background-image: url("assets/add/img/masjid.jpg");
-	background-repeat: no-repeat;
-	-webkit-filter: blur(2px);
-/*	-moz-filter: blur(3px);
-	filter: */
-}
+
 .log-form{
 	position: absolute;
 	top: 50%;
