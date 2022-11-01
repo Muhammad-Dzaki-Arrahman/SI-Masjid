@@ -40,6 +40,7 @@ $routes->get('/login', 'SimController::index');
 $routes->get('/dashboard', 'SimController::dashboard');
 $routes->get('/kegiatan', 'SimController::kegiatan');
 $routes->get('/pengumuman', 'SimController::pengumuman');
+$routes->get('/berita', 'SimController::berita');
 $routes->get('/profile', 'SimController::profile');
 $routes->post('/cek-login', 'SimController::cek_login');
 $routes->post('/dashboard', 'SimController::dashboard');
