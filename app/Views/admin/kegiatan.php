@@ -138,23 +138,21 @@
                             <img src="<?= base_url('argon') ?>/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?php echo $kgt['nama_ustad']; ?></h6>
-                            <p class="text-xs text-secondary mb-0">yahya@yahoo.com</p>
+                            <h6 class="mb-0 text-sm">
+                              <?php echo $kgt['nama_ustad']; ?></h6>
+                            <p class="text-xs text-secondary mb-0"><?php echo $kgt['nama_ustad']; ?>@gmail.com</p>
                           </div>
                         </div>
                     </td>
                     <td><?php echo $kgt['nama_kajian']; ?></td>
                     <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Ahad</span>
+                        <span class="badge badge-sm bg-gradient-success"><?= $kgt['hari'] ?></span>
                       </td>
                     <td><?php echo $kgt['judul_kajian']; ?></td>
                 <td>
                   <div>
-                    <a class="btn btn-warning mr-3" href="">Edit</a>
-                    <form action="">
-                      <input name="_method" value="DELETE" type="hidden">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    <a href="/admin/crud/edit_k/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
+                    <a href="/admin/delete-userk/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-danger card-text-font w-100 mt-1">Delete</button></a>
                   </div>
                 </td>
                 </tr>
@@ -277,3 +275,4 @@
 </body>
 
 </html>
+
