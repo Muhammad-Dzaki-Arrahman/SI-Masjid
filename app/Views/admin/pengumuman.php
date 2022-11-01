@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="">
+          <a class="nav-link active" href="pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,7 +62,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="berita">
+          <a class="nav-link " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
@@ -73,7 +73,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -118,12 +118,12 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th>No</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">No</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Judul Pengumuman</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Isi Pengumuman</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Tanggal</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
-                      </tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Slug Pengumuman</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Tanggal</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Action</th>
+                    </tr>
                   </thead>
                   <tbody>
                     <?php $no=1; ?>  
@@ -135,7 +135,7 @@
                 <tr>
                     <th><?= $no; ?></th>
                     <td><?php echo $pgn['Judul_Pengumuman']; ?></td>
-                    <td><?php echo $pgn['Isi_Pengumuman']; ?></td>
+                    <td><?php echo $pgn['Slug_Pengumuman']; ?></td>
 <!--                     <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Tanggal</span>
                       </td> -->
