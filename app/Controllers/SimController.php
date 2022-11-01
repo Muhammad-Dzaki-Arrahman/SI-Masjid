@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
+use App\Models\M_berita;
+use App\Models\M_kasmasuk;
+use App\Models\M_kaskeluar;
 class SimController extends BaseController
 {
     public function index()
@@ -57,6 +60,17 @@ class SimController extends BaseController
         ];
 
         return view('admin/pengumuman', $data);
+    }
+      public function berita()
+    {
+        $beritaModel = new M_berita();
+        $berita = $beritaModel->findAll();
+        $data = [
+            'title' => 'Berita',
+            'berita' => $berita
+        ];
+
+        return view('admin/berita', $data);
     }
 
     public function save_p()
