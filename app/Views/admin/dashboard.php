@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://waktusholat.org/css/widget.api.v1.min.css" rel="stylesheet" />
   <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('argon')?>/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="<?= base_url('argon')?>/assets/img/twk.png">
   <title>
@@ -73,7 +74,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/profile">
+          <a class="nav-link " href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +82,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -122,11 +123,16 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Kas Masuk</p>
+                    <p class="mb-0">
+                      <span class="text-success text-sm font-weight-bolder">+2.000.000</span>
+                      since last week
+                    </p>
+                    <a href="http://localhost:8080/kasmasuk" class="btn">Detail</a>
                   </div>
                 </div>
                 <div class="col-4 text-end">
                   <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                    <i class="ni ni-money-coins text-lg opacity-10" ></i>
                   </div>
                 </div>
               </div>
@@ -140,6 +146,11 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Kas Keluar</p>
+                    <p class="mb-0">
+                      <span class="text-danger text-sm font-weight-bolder">-2.000.000</span>
+                      since last week
+                    </p>
+                    <a href="http://localhost:8080/kaskeluar" class="btn">Detail</a>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -191,14 +202,14 @@
       </div>
       <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card z-index-2 h-100">
+          <div class="card z-index-2">
             <div class="card-header pb-0 pt-3 bg-transparent">
               <h6 class="text-capitalize">Jadwal Sholat</h6>
-              
             </div>
             <div class="card-body  text-center">
               <div class="chart">
               <table class="table table-dark">
+                <?= $waktu['data']['lokasi'] ?>
   <thead>
     <tr>
       <th scope="col">Subuh</th>
@@ -207,15 +218,38 @@
       <th scope="col">Magrib</th>
       <th scope="col">Isya</th>
     </tr>
+<!--     <tr>
+      <th>Ahad</th>
+    </tr>
+        <tr>
+      <th>Senin</th>
+    </tr>
+        <tr>
+      <th>Selasa</th>
+    </tr>
+        <tr>
+      <th>Rabu</th>
+    </tr>
+        <tr>
+      <th>Kamis</th>
+    </tr>
+        <tr>
+      <th>Juma'at</th>
+    </tr>
+        <tr>
+      <th>Sabtu</th>
+    </tr> -->
+
+
   </thead>
   <tbody >
-    <tr>
-      <td>04 : 34</td>
-      <td>11 : 48</td>
-      <td>14 : 50</td>
-      <td>17 : 53</td>
-      <td>18 : 58</td>
-    </tr>
+
+      <td><?= $waktu['data']['jadwal']['subuh'] ?></td>
+      <td><?= $waktu['data']['jadwal']['dzuhur'] ?></td>
+      <td><?= $waktu['data']['jadwal']['ashar'] ?></td>
+      <td><?= $waktu['data']['jadwal']['maghrib'] ?></td>
+      <td><?= $waktu['data']['jadwal']['isya'] ?></td>
+
   </tbody>
 </table>
                 <canvas   height="200"></canvas>
@@ -267,144 +301,10 @@
           </div>
         </div>
       </div>
-<!--       <div class="row mt-4">
+      <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card ">
-            <div class="card-header pb-0 p-3">
-              <div class="d-flex justify-content-between">
-                <h6 class="mb-2">Sales by Country</h6>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center ">
-                <tbody>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="http://localhost/sim_prak/public/argon/assets/img/icons/flags/US.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">United States</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">2500</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$230,900</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">29.9%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="http://localhost/ign4/public/argon/assets/img/icons/flags/DE.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Germany</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">3.900</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$440,000</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">40.22%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="http://localhost/ign4/public/argon/assets/img/icons/flags/GB.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Great Britain</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">1.400</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$190,700</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">23.44%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="http://localhost/ign4/public/argon/assets/img/icons/flags/BR.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Brasil</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">562</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$143,960</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">32.14%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <img src="<?= base_url('argon')?>/assets/img/struktur.png">
           </div>
         </div>
         <div class="col-lg-5">
@@ -474,7 +374,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -553,6 +453,7 @@
     </div>
   </div>
   <!--   Core JS Files   -->
+  <script src="https://waktusholat.org/js/widget.api.v1.min.js"></script>
   <script src="<?= base_url('argon')?>/assets/js/core/popper.min.js"></script>
   <script src="<?= base_url('argon')?>/assets/js/core/bootstrap.min.js"></script>
   <script src="<?= base_url('argon')?>/assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -654,6 +555,12 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?= base_url('argon')?>/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script>
+    var api_url = 'https://api.pray.zone/v2/times/today.json?ip=auto';
+    document.addEventListener("DOMContentLoaded", function () {
+        PrayerTimesApi();
+    });
+</script>
 </body>
 
 </html>
