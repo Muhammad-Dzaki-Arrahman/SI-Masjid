@@ -1697,7 +1697,7 @@ class BaseBuilder
     }
 
     /**
-     * Allows the where clause, limit and offset to be added directly
+     * Allows the , limit and offset to be added directly
      *
      * @param array|string $where
      *

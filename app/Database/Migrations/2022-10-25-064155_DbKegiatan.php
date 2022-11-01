@@ -9,7 +9,7 @@ class DbKegiatan extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id_kajian' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
@@ -42,6 +42,6 @@ class DbKegiatan extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('tbl_kegiatan');
     }
 }

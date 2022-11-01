@@ -8,7 +8,7 @@ use CodeIgniter\Model;
 class M_pengumuman extends Model {
     
     protected $table            = 'tbl_pengumuman';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_pengumuman';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

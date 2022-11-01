@@ -40,7 +40,6 @@ $routes->get('/login', 'SimController::index');
 $routes->get('/dashboard', 'SimController::dashboard');
 $routes->get('/kegiatan', 'SimController::kegiatan');
 $routes->get('/pengumuman', 'SimController::pengumuman');
-$routes->get('/berita', 'SimController::berita');
 $routes->get('/profile', 'SimController::profile');
 $routes->post('/cek-login', 'SimController::cek_login');
 $routes->post('/dashboard', 'SimController::dashboard');
@@ -48,6 +47,12 @@ $routes->get('/ckegiatan', 'SimController::ckegiatan');
 $routes->get('/cpengumuman', 'SimController::cpengumuman');
 $routes->post('/admin/save-pengumuman', 'SimController::save_p');
 $routes->post('/admin/save-kegiatan', 'SimController::save_k');
+$routes->get('/admin/delete-userk/(:num)', 'SimController::delete_k/$1');
+$routes->get('/admin/delete-userp/(:num)', 'SimController::delete_p/$1');
+$routes->get('/admin/crud/edit_k/(:num)', 'SimController::edit_k/$1');
+$routes->get('/admin/crud/edit_p/(:num)', 'SimController::edit_p/$1');
+$routes->post('/admin/update-userk/(:num)', 'SimController::update_k/$1');
+$routes->post('/admin/update-userp/(:num)', 'SimController::update_p/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

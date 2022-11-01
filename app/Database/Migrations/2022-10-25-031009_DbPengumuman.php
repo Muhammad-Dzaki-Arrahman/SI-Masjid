@@ -34,6 +34,6 @@ class DbPengumuman extends Migration
 
     public function down()
     {
-        //
+        $this->forge->dropTable('tbl_pengumuman');
     }
 }

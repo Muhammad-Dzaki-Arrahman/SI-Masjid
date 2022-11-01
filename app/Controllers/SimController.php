@@ -5,11 +5,6 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
-use App\Models\M_kasmasuk;
-use App\Models\M_kaskeluar;
-use App\Models\M_zakat;
-use App\Models\M_total;
-
 class SimController extends BaseController
 {
     public function index()
@@ -38,13 +33,7 @@ class SimController extends BaseController
     }
     public function dashboard()
     {
-        $url = 'https://api.myquran.com/v1/sholat/jadwal/0314/2022/10/31';
-        $waktu = json_decode(file_get_contents($url), true);
-
-        $data = [
-            'waktu' => $waktu,
-        ];
-        return view('admin/dashboard', $data);
+        return view('admin/dashboard');
     }
     public function kegiatan()
     {
@@ -57,7 +46,8 @@ class SimController extends BaseController
 
         return view('admin/kegiatan', $data);
     }
-        public function pengumuman()
+
+    public function pengumuman()
     {
         $pengumumanModel = new M_pengumuman();
         $pengumuman = $pengumumanModel->findAll();
@@ -68,76 +58,147 @@ class SimController extends BaseController
 
         return view('admin/pengumuman', $data);
     }
-    public function kasmasuk()
+
+    public function save_p()
     {
-        $kasmasukModel = new M_kasmasuk();
-        $kasmasuk = $kasmasukModel->findAll();
+        if (!$this->validate([
+            'judul_pengumuman' => 'required',
+            'isi_pengumuman' => 'required'
+         ])) {
+            return redirect()->to('/cpengumuman');
+         }
+   
+         $model = new M_pengumuman();
+   
+         $data = [
+            'judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
+            'isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
+            'tanggal' => $this->request->getPost('tanggal'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/pengumuman');
+    }
+    
+    public function save_k()
+    {
+        if (!$this->validate([
+            'nama_ustad' => 'required',
+            'nama_kajian' => 'required',
+            'hari' => 'required',
+            'judul_kajian' => 'required'
+         ])) {
+            return redirect()->to('/ckegiatan');
+         }
+   
+         $model = new M_kegiatan();
+   
+         $data = [
+            'nama_ustad' => $this->request->getPost('nama_ustad'),
+            'nama_kajian' => $this->request->getPost('nama_kajian'),
+            'hari' => $this->request->getPost('hari'),
+            'judul_kajian' => $this->request->getPost('judul_kajian'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/kegiatan');
+    }
+
+    public function delete_k($id) {
+        $model = new M_kegiatan();
+  
+        $model->delete($id);
+        return redirect()->to('/kegiatan');
+     }
+
+    public function delete_p($id) {
+        $model = new M_pengumuman();
+  
+        $model->delete($id);
+        return redirect()->to('/pengumuman');
+     }
+
+     public function edit_k($id){
+        $model = new M_kegiatan();
+        $kegiatan = $model->find($id);
+  
         $data = [
-            'title' => 'Kasmasuk',
-            'kasmasuk' => $kasmasuk
+           'kegiatan' => $kegiatan
         ];
-
-        return view('admin/kasmasuk', $data);
-    }
-
-    public function kaskeluar()
-    {
-        $kaskeluarModel = new M_kaskeluar();
-        $kaskeluar = $kaskeluarModel->findAll();
+  
+        return view('admin/crud/edit_k', $data);
+     }
+     public function edit_p($id){
+        $model = new M_pengumuman();
+        $pengumuman = $model->find($id);
+  
         $data = [
-            'title' => 'Kaskeluar',
-            'kaskeluar' => $kaskeluar
+           'pengumuman' => $pengumuman
         ];
-
-        return view('admin/kaskeluar', $data);
-    }
-    public function zakat()
-    {
-        $zakatModel = new M_zakat();
-        $zakat = $zakatModel->findAll();
+  
+        return view('admin/crud/edit_p', $data);
+     }
+  
+     public function update_k($id)
+     {
+        if (!$this->validate([
+            'nama_ustad' => 'required',
+            'nama_kajian' => 'required',
+            'hari' => 'required',
+            'judul_kajian' => 'required'
+        ])) {
+           return redirect()->to('/ckegiatan');
+        }
+  
+        $model = new M_kegiatan();
+  
         $data = [
-            'title' => 'Zakat',
-            'zakat' => $zakat
+            'nama_ustad' => $this->request->getPost('nama_ustad'),
+            'nama_kajian' => $this->request->getPost('nama_kajian'),
+            'hari' => $this->request->getPost('hari'),
+            'judul_kajian' => $this->request->getPost('judul_kajian'),
         ];
-
-        return view('admin/zakat', $data);
-    }
-    public function total()
-    {
-        $totalModel = new M_total();
-        $total = $totalModel->findAll();
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/kegiatan');
+     }
+     
+     public function update_p($id)
+     {
+        if (!$this->validate([
+            'judul_pengumuman' => 'required',
+            'isi_pengumuman' => 'required'
+        ])) {
+           return redirect()->to('/cpengumuman');
+        }
+  
+        $model = new M_pengumuman();
+  
         $data = [
-            'title' => 'Total',
-            'total' => $total
+            'judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
+            'isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
+            'tanggal' => $this->request->getPost('tanggal'),
         ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/pengumuman');
+     }
 
-        return view('admin/total', $data);
-    }
-    public function ckasmasuk()
-    {
-        return view('admin/crud/ckasmasuk');
-    }
-    public function ckaskeluar()
-    {
-        return view('admin/crud/ckaskeluar');
-    }
-    public function czakat()
-    {
-        return view('admin/crud/czakat');
-    }
-    public function ctotal()
-    {
-        return view('admin/crud/ctotal');
-    }
     public function ckegiatan()
-    {
+    {  
         return view('admin/crud/ckegiatan');
     }
+
     public function cpengumuman()
-    {
+    {  
         return view('admin/crud/cpengumuman');
     }
-        public function profile()
+
+    public function profile()
     {  
         return view('admin/profile');
     }

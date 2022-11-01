@@ -62,11 +62,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="berita">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Berita</span>
+            <span class="nav-link-text ms-1">Dakwah</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -140,13 +140,13 @@
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">
                               <?php echo $kgt['nama_ustad']; ?></h6>
-                            <p class="text-xs text-secondary mb-0"><?php echo $kgt['nama_ustad']; ?>@gmail.com</p>
+                            <p class="text-xs text-secondary mb-0">yahya@yahoo.com</p>
                           </div>
                         </div>
                     </td>
                     <td><?php echo $kgt['nama_kajian']; ?></td>
                     <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success"><?= $kgt['hari'] ?></span>
+                        <span class="badge badge-sm bg-gradient-success">Ahad</span>
                       </td>
                     <td><?php echo $kgt['judul_kajian']; ?></td>
                 <td>

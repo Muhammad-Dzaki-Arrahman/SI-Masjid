@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="pengumuman">
+          <a class="nav-link active" href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,18 +62,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="berita">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Berita</span>
+            <span class="nav-link-text ms-1">Dakwah</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="profile">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8081/login">
+          <a class="nav-link " href="http://localhost:8080/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -118,12 +118,12 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">No</th>
+                      <th>No</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Judul Pengumuman</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Slug Pengumuman</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Tanggal</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Action</th>
-                    </tr>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Isi Pengumuman</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Tanggal</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
+                      </tr>
                   </thead>
                   <tbody>
                     <?php $no=1; ?>  
@@ -134,18 +134,16 @@
                     ?>
                 <tr>
                     <th><?= $no; ?></th>
-                    <td><?php echo $pgn['Judul_Pengumuman']; ?></td>
-                    <td><?php echo $pgn['Slug_Pengumuman']; ?></td>
+                    <td><?php echo $pgn['judul_pengumuman']; ?></td>
+                    <td><?php echo $pgn['isi_pengumuman']; ?></td>
 <!--                     <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Tanggal</span>
                       </td> -->
-                    <td><?php echo $pgn['Tanggal']; ?></td>
+                    <td><?php echo $pgn['tanggal']; ?></td>
                 <td>
                   <div>
-                    <a class="btn btn-warning mr-3" href="">Edit</a>
-                    <form action="">
-                      <input name="_method" value="DELETE" type="hidden">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                  <a href="/admin/crud/edit_p/<?= $pgn['id_pengumuman'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
+                  <a href="/admin/delete-userp/<?= $pgn['id_pengumuman'] ?>"><button type="button" class="btn btn-danger card-text-font w-100 mt-1">Delete</button></a>
                     </form>
                   </div>
                 </td>
