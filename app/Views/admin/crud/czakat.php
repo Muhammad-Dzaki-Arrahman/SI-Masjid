@@ -123,7 +123,7 @@
   </div>
     <div class="form-group">
     <label for="jenis_zakat">Jenis Zakat</label>
-    <input type="text" class="form-control" id="jenis_zakat" name="jens_zakat">
+    <input type="text" class="form-control" id="jenis_zakat" name="jenis_zakat">
   </div>
     <div class="form-group">
     <label for="jumlah">Jumlah</label>
