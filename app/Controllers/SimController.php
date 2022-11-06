@@ -5,6 +5,13 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
+use App\Models\M_kasmasuk;
+use App\Models\M_kaskeluar;
+use App\Models\M_berita;
+use App\Models\M_total;
+use App\Models\M_zakat;
+use CodeIgniter\I18n\Time;
+
 class SimController extends BaseController
 {
     public function index()
@@ -31,9 +38,16 @@ class SimController extends BaseController
         }
         }
     }
+   
     public function dashboard()
     {
-        return view('admin/dashboard');
+        $url = 'https://api.myquran.com/v1/sholat/jadwal/1014/'.date('Y').'/'.date('m').'/'.date('d');
+        $waktu = json_decode(file_get_contents($url), true);
+
+        $data = [
+            'waktu' => $waktu,
+        ];
+        return view('admin/dashboard', $data);
     }
     public function kegiatan()
     {
@@ -46,8 +60,7 @@ class SimController extends BaseController
 
         return view('admin/kegiatan', $data);
     }
-
-    public function pengumuman()
+        public function pengumuman()
     {
         $pengumumanModel = new M_pengumuman();
         $pengumuman = $pengumumanModel->findAll();
@@ -58,12 +71,72 @@ class SimController extends BaseController
 
         return view('admin/pengumuman', $data);
     }
+        public function kasmasuk()
+    {
+        $kasmasukModel = new M_kasmasuk();
+        $kasmasuk = $kasmasukModel->findAll();
+        $data = [
+            'title' => 'Kasmasuk',
+            'kasmasuk' => $kasmasuk
+        ];
 
-    public function save_p()
+        return view('admin/kasmasuk', $data);
+    }
+
+    public function kaskeluar()
+    {
+        $kaskeluarModel = new M_kaskeluar();
+        $kaskeluar = $kaskeluarModel->findAll();
+        $data = [
+            'title' => 'Kaskeluar',
+            'kaskeluar' => $kaskeluar
+        ];
+
+        return view('admin/kaskeluar', $data);
+    }
+        public function zakat()
+    {
+        $zakatModel = new M_zakat();
+        $zakat = $zakatModel->findAll();
+        $data = [
+            'title' => 'Zakat',
+            'zakat' => $zakat
+        ];
+
+        return view('admin/zakat', $data);
+    }
+    public function total()
+    {
+        $totalModel = new M_total();
+        $total = $totalModel->findAll();
+        $data = [
+            'title' => 'Total',
+            'total' => $total
+        ];
+
+        return view('admin/total', $data);
+    }
+    public function ckasmasuk()
+    {
+        return view('admin/crud/ckasmasuk');
+    }
+    public function ckaskeluar()
+    {
+        return view('admin/crud/ckaskeluar');
+    }
+    public function czakat()
+    {
+        return view('admin/crud/czakat');
+    }
+    public function ctotal()
+    {
+        return view('admin/crud/ctotal');
+    }
+public function save_p()
     {
         if (!$this->validate([
             'judul_pengumuman' => 'required',
-            'isi_pengumuman' => 'required'
+            'slug_pengumuman' => 'required'
          ])) {
             return redirect()->to('/cpengumuman');
          }
@@ -71,9 +144,9 @@ class SimController extends BaseController
          $model = new M_pengumuman();
    
          $data = [
-            'judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
-            'isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
-            'tanggal' => $this->request->getPost('tanggal'),
+            'judul_pengumuman' => $this->request->getPost('Judul_Pengumuman'),
+            'isi_pengumuman' => $this->request->getPost('Slug_Pengumuman'),
+            'Tanggal' => $this->request->getPost('Tanggal'),
          ];
    
          $model->save($data);
@@ -169,18 +242,19 @@ class SimController extends BaseController
      public function update_p($id)
      {
         if (!$this->validate([
-            'judul_pengumuman' => 'required',
-            'isi_pengumuman' => 'required'
+            'Judul_Pengumuman' => 'required',
+            'Slug_Pengumuman' => 'required',
+            'Tanggal' => 'required'
         ])) {
-           return redirect()->to('/cpengumuman');
+           return redirect()->to('cpengumuman');
         }
   
         $model = new M_pengumuman();
   
         $data = [
-            'judul_pengumuman' => $this->request->getPost('judul_pengumuman'),
-            'isi_pengumuman' => $this->request->getPost('isi_pengumuman'),
-            'tanggal' => $this->request->getPost('tanggal'),
+            'Judul_Pengumuman' => $this->request->getPost('Judul_Pengumuman'),
+            'Slug_Pengumuman' => $this->request->getPost('Slug_Pengumuman'),
+            'Tanggal' => $this->request->getPost('Tanggal')
         ];
   
         $model->update($id, $data);
@@ -188,18 +262,27 @@ class SimController extends BaseController
         return redirect()->to('/pengumuman');
      }
 
-    public function ckegiatan()
-    {  
+        public function ckegiatan()
+    {
         return view('admin/crud/ckegiatan');
     }
-
-    public function cpengumuman()
-    {  
+        public function cpengumuman()
+    {
         return view('admin/crud/cpengumuman');
     }
-
-    public function profile()
+        public function profile()
     {  
         return view('admin/profile');
+    }
+    public function berita()
+    {
+        $beritaModel = new M_berita();
+        $berita = $beritaModel->findAll();
+        $data = [
+            'title' => 'Berita',
+            'berita' => $berita
+        ];
+
+        return view('admin/berita', $data);
     }
 }
