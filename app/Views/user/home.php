@@ -31,7 +31,7 @@
     <link href="<?= base_url('usr')?>/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="<?= base_url('usr')?>css/style.css" rel="stylesheet">
+    <link href="<?= base_url('usr')?>/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -72,8 +72,8 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.html" class="navbar-brand ms-lg-5">
-            <h3 class="m-0 text-uppercase text-dark"><i class="bi bi-twk"></i>Sistem Informasi Masjid</h3>
+        <a href="" class="navbar-brand ms-lg-5">
+            <h3 class="m-0 text-uppercase text-dark"><span class="fi fi-lpg"></span>Sistem Informasi Masjid</h3>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -81,20 +81,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="product.html" class="nav-item nav-link">Product</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="team.html" class="dropdown-item">The Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+                <a href="about.html" class="nav-item nav-link">Profile</a>
+                <a href="service.html" class="nav-item nav-link">Kajian</a>
+                <a href="product.html" class="nav-item nav-link">Pengumuman</a>
+                <a href="product.html" class="nav-item nav-link">Dakwah</a>
             </div>
         </div>
     </nav>
@@ -107,15 +97,15 @@
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="display-1 text-uppercase text-dark mb-lg-4">Masjid Tawakal</h1>
-                    <h1 class="text-uppercase text-white mb-lg-4">Make Your Pets Happy</h1>
-                    <p class="fs-4 text-white mb-lg-4">Dolore tempor clita lorem rebum kasd eirmod dolore diam eos kasd. Kasd clita ea justo est sed kasd erat clita sea</p>
+                    <h1 class="text-uppercase text-white mb-lg-4">Rajabasa</h1>
+                    <p class="fs-4 text-white mb-lg-4">Pusat Kegiatan Ibadah Umat Muslim daerah Rajabasa </p>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+<!--                             <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="<?= base_url('argon') ?>/assets/img/mecca.mp3" data-bs-target="#videoModal">
                             <span></span>
                         </button>
-                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5>
+                        <h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">Play Video</h5> -->
                     </div>
                 </div>
             </div>
@@ -124,25 +114,7 @@
     <!-- Hero End -->
 
 
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Modal End -->
+
 
 
     <!-- About Start -->
@@ -151,34 +123,40 @@
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded" src="<?= base_url('usr') ?>/img/showtwk.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="border-start border-5 border-primary ps-5 mb-5">
                         <h6 class="text-primary text-uppercase">About Us</h6>
-                        <h1 class="display-5 text-uppercase mb-0">We Keep Your Pets Happy All Time</h1>
+                        <h1 class="display-5 text-uppercase mb-0">Masjid Tawakal</h1>
                     </div>
-                    <h4 class="text-body mb-4">Diam dolor diam ipsum tempor sit. Clita erat ipsum et lorem stet no labore lorem sit clita duo justo magna dolore</h4>
+                    <h4 class="text-body mb-4">Visi dan Misi Masjid Tawakal</h4>
                     <div class="bg-light p-4">
                         <ul class="nav nav-pills justify-content-between mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item w-50" role="presentation">
                                 <button class="nav-link text-uppercase w-100 active" id="pills-1-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1"
-                                    aria-selected="true">Our Mission</button>
+                                    aria-selected="true">Misi</button>
                             </li>
                             <li class="nav-item w-50" role="presentation">
                                 <button class="nav-link text-uppercase w-100" id="pills-2-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2"
-                                    aria-selected="false">Our Vission</button>
+                                    aria-selected="false">Visi</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                    <p class="mb-0">1. Melaksanakan kegiatan sholat lima waktu secara berjamaah <br>
+                       2. Meningkatkan program pengajian secara rutin <br>
+                       3. Melaksanakan Peringatan Hari Besar Islam <br>
+                       4. Melaksanakan pembiasaan hidup bersih dan sehat <br>
+                       5. Meningkatkan kegiatan sosial kemasyarakatan <br>
+                       6. Menjaga kesucian Masjid sebagai tempat ibadah <br>
+                       7. Menjadikan Masjid sebagai tempat untuk beribadah kepada Allah semata.</p> 
                             </div>
                             <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
-                                <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                                <p class="mb-0">Membentuk jamaah Masjid Tawakal yang beriman, bertaqwa, dan selamat dunia akhirat</p>
                             </div>
                         </div>
                     </div>
@@ -193,8 +171,8 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Services</h6>
-                <h1 class="display-5 text-uppercase mb-0">Our Excellent Pet Care Services</h1>
+                <h6 class="text-primary text-uppercase">Kajian</h6>
+                <h1 class="display-5 text-uppercase mb-0">Kajian Masjid Tawakal</h1>
             </div>
             <div class="row g-5">
                 <div class="col-md-6">
@@ -273,7 +251,7 @@
             <div class="owl-carousel product-carousel">
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-1.png" alt="">
+                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-1.png" alt="">
                         <h6 class="text-uppercase">Quality Pet Foods</h6>
                         <h5 class="text-primary mb-0">$199.00</h5>
                         <div class="btn-action d-flex justify-content-center">
@@ -284,7 +262,7 @@
                 </div>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-2.png" alt="">
+                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-2.png" alt="">
                         <h6 class="text-uppercase">Quality Pet Foods</h6>
                         <h5 class="text-primary mb-0">$199.00</h5>
                         <div class="btn-action d-flex justify-content-center">
@@ -295,7 +273,7 @@
                 </div>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-3.png" alt="">
+                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-3.png" alt="">
                         <h6 class="text-uppercase">Quality Pet Foods</h6>
                         <h5 class="text-primary mb-0">$199.00</h5>
                         <div class="btn-action d-flex justify-content-center">
@@ -306,7 +284,7 @@
                 </div>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-4.png" alt="">
+                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-4.png" alt="">
                         <h6 class="text-uppercase">Quality Pet Foods</h6>
                         <h5 class="text-primary mb-0">$199.00</h5>
                         <div class="btn-action d-flex justify-content-center">
@@ -317,7 +295,7 @@
                 </div>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="img/product-2.png" alt="">
+                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-2.png" alt="">
                         <h6 class="text-uppercase">Quality Pet Foods</h6>
                         <h5 class="text-primary mb-0">$199.00</h5>
                         <div class="btn-action d-flex justify-content-center">
@@ -742,7 +720,7 @@
     <script src="<?= base_url('usr')?>/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="<?= base_url('usr')?>/js/main.js"></script>
 </body>
 
 </html>
