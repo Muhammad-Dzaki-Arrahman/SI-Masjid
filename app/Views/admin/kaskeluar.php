@@ -62,11 +62,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="berita">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Berita</span>
+            <span class="nav-link-text ms-1">Dakwah</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -89,6 +89,18 @@
           </a>
         </li>
       </ul>
+    </div>
+                <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="<?= base_url('argon')?>/assets/img/twk.png">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Kunjungin Web berikut</h6>
+            <p class="text-xs font-weight-bold mb-0">Tawakal Mosque</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="home" type="button">Here</a>
     </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
@@ -142,18 +154,15 @@
                           </div>
                         </div>
                     </td>
-                    <td><?php echo $kgt['jumlah']; ?></td>
+                    <td><?php echo $ksl['jumlah']; ?></td>
                     <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">300.000</span>
+                        <span class="badge badge-sm bg-gradient-success"><?= $ksl['tanggal'] ?></span>
                       </td>
-                    <td><?php echo $kgt['keterangan']; ?></td>
+                    <td><?php echo $ksl['keterangan']; ?></td>
                 <td>
                   <div>
-                    <a class="btn btn-warning mr-3" href="">Edit</a>
-                    <form action="">
-                      <input name="_method" value="DELETE" type="hidden">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                  <a href="/admin/crud/edit_kk/<?= $ksl['id_kaskeluar'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
+                  <a href="/admin/delete-userkk/<?= $ksl['id_kaskeluar'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button><a>
                   </div>
                 </td>
                 </tr>
