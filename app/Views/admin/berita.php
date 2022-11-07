@@ -124,17 +124,18 @@
             <div class="card-header pb-0">
               <h6>Berita</h6>
               <a href="cberita"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+              <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                    <th class=" font-weight-bolder ps-2">No</th>
-                      <th class=" font-weight-bolder ps-2">Judul Berita</th>
-                      <th class=" font-weight-bolder ps-2">Slug Berita</th>
-                      <th class=" font-weight-bolder ps-2">Tanggal</th>
-                      <th class=" font-weight-bolder ps-2">Action</th>
+                    <th class="text-center">No</th>
+                      <th class="  ps-2">Judul Berita</th>
+                      <th class="  ps-2">Slug Berita</th>
+                      <th class="  ps-2">Tanggal</th>
+                      <th class="  ps-2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -145,7 +146,7 @@
 
                     ?>
                 <tr>
-                    <th><?= $no; ?></th>
+                    <th class="text-center"><?= $no; ?></th>
                     <td><?php echo $brt['judul_berita']; ?></td>
                     <td><?php echo $brt['slug_berita']; ?></td>
 <!--                     <td class="align-middle text-center text-sm">
