@@ -12,6 +12,7 @@ use App\Models\M_total;
 use App\Models\M_zakat;
 use CodeIgniter\I18n\Time;
 
+
 class SimController extends BaseController
 {
     public function index()
@@ -38,7 +39,6 @@ class SimController extends BaseController
         }
         }
     }
-   
     public function dashboard()
     {
         $url = 'https://api.myquran.com/v1/sholat/jadwal/1014/'.date('Y').'/'.date('m').'/'.date('d');
@@ -132,157 +132,167 @@ class SimController extends BaseController
     {
         return view('admin/crud/ctotal');
     }
-public function save_p()
-    {
-        if (!$this->validate([
-            'judul_pengumuman' => 'required',
-            'slug_pengumuman' => 'required'
-         ])) {
-            return redirect()->to('/cpengumuman');
-         }
-   
-         $model = new M_pengumuman();
-   
-         $data = [
-            'judul_pengumuman' => $this->request->getPost('Judul_Pengumuman'),
-            'isi_pengumuman' => $this->request->getPost('Slug_Pengumuman'),
-            'Tanggal' => $this->request->getPost('Tanggal'),
-         ];
-   
-         $model->save($data);
-   
-         return redirect()->to('/pengumuman');
-    }
-    
-    public function save_k()
-    {
-        if (!$this->validate([
-            'nama_ustad' => 'required',
-            'nama_kajian' => 'required',
-            'hari' => 'required',
-            'judul_kajian' => 'required'
-         ])) {
-            return redirect()->to('/ckegiatan');
-         }
-   
-         $model = new M_kegiatan();
-   
-         $data = [
-            'nama_ustad' => $this->request->getPost('nama_ustad'),
-            'nama_kajian' => $this->request->getPost('nama_kajian'),
-            'hari' => $this->request->getPost('hari'),
-            'judul_kajian' => $this->request->getPost('judul_kajian'),
-         ];
-   
-         $model->save($data);
-   
-         return redirect()->to('/kegiatan');
-    }
-
-    public function delete_k($id) {
-        $model = new M_kegiatan();
+    public function delete_km($id) {
+        $model = new M_kasmasuk();
   
         $model->delete($id);
-        return redirect()->to('/kegiatan');
+        return redirect()->to('/kasmasuk');
      }
-
-    public function delete_p($id) {
-        $model = new M_pengumuman();
-  
-        $model->delete($id);
-        return redirect()->to('/pengumuman');
-     }
-
-     public function edit_k($id){
-        $model = new M_kegiatan();
-        $kegiatan = $model->find($id);
+    public function edit_km($id)
+    {
+        $model = new M_kasmasuk();
+        $kasmasuk = $model->find($id);
   
         $data = [
-           'kegiatan' => $kegiatan
+           'kasmasuk' => $kasmasuk
         ];
   
-        return view('admin/crud/edit_k', $data);
-     }
-     public function edit_p($id){
-        $model = new M_pengumuman();
-        $pengumuman = $model->find($id);
-  
-        $data = [
-           'pengumuman' => $pengumuman
-        ];
-  
-        return view('admin/crud/edit_p', $data);
-     }
-  
-     public function update_k($id)
-     {
+        return view('admin/crud/edit_km', $data);
+    }
+    public function update_km($id)
+    {
         if (!$this->validate([
-            'nama_ustad' => 'required',
-            'nama_kajian' => 'required',
-            'hari' => 'required',
-            'judul_kajian' => 'required'
+            'nama' => 'required',
+            'jumlah' => 'required',
+            'tanggal' => 'required',
+            'keterangan' => 'required'
         ])) {
-           return redirect()->to('/ckegiatan');
-        }
-  
-        $model = new M_kegiatan();
+           return redirect()->to('/ckasmasuk');
+    }
+    $model = new M_kasmasuk();
   
         $data = [
-            'nama_ustad' => $this->request->getPost('nama_ustad'),
-            'nama_kajian' => $this->request->getPost('nama_kajian'),
-            'hari' => $this->request->getPost('hari'),
-            'judul_kajian' => $this->request->getPost('judul_kajian'),
+            'nama' => $this->request->getPost('nama'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'tanggal' => $this->request->getPost('tanggal'),
+            'keterangan' => $this->request->getPost('keterangan'),
         ];
   
         $model->update($id, $data);
   
-        return redirect()->to('/kegiatan');
+        return redirect()->to('/kasmasuk');
      }
-     
-     public function update_p($id)
-     {
-        if (!$this->validate([
-            'Judul_Pengumuman' => 'required',
-            'Slug_Pengumuman' => 'required',
-            'Tanggal' => 'required'
-        ])) {
-           return redirect()->to('cpengumuman');
-        }
+     public function delete_kk($id) {
+        $model = new M_kaskeluar();
   
-        $model = new M_pengumuman();
+        $model->delete($id);
+        return redirect()->to('/kaskeluar');
+     }
+    public function edit_kk($id)
+    {
+        $model = new M_kaskeluar();
+        $kaskeluar = $model->find($id);
   
         $data = [
-            'Judul_Pengumuman' => $this->request->getPost('Judul_Pengumuman'),
-            'Slug_Pengumuman' => $this->request->getPost('Slug_Pengumuman'),
-            'Tanggal' => $this->request->getPost('Tanggal')
+           'kaskeluar' => $kaskeluar
+        ];
+  
+        return view('admin/crud/edit_kk', $data);
+    }
+    public function update_kk($id)
+    {
+        if (!$this->validate([
+            'nama' => 'required',
+            'jumlah' => 'required',
+            'tanggal' => 'required',
+            'keterangan' => 'required'
+        ])) {
+           return redirect()->to('/ckaskeluar');
+    }
+    $model = new M_kaskeluar();
+  
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'jumlah' => $this->request->getPost('jumlah'),
+            'tanggal' => $this->request->getPost('tanggal'),
+            'keterangan' => $this->request->getPost('keterangan'),
         ];
   
         $model->update($id, $data);
   
-        return redirect()->to('/pengumuman');
+        return redirect()->to('/kaskeluar');
      }
-
-        public function ckegiatan()
+    public function delete_z($id) {
+        $model = new M_zakat();
+  
+        $model->delete($id);
+        return redirect()->to('/zakat');
+     }
+    public function edit_z($id)
     {
-        return view('admin/crud/ckegiatan');
-    }
-        public function cpengumuman()
-    {
-        return view('admin/crud/cpengumuman');
-    }
-        public function profile()
-    {  
-        return view('admin/profile');
-    }
-    public function berita()
-    {
-        $beritaModel = new M_berita();
-        $berita = $beritaModel->findAll();
+        $model = new M_zakat();
+        $zakat = $model->find($id);
+  
         $data = [
-            'title' => 'Berita',
-            'berita' => $berita
+           'zakat' => $zakat
         ];
-
-        return view('admin/berita', $data);
+  
+        return view('admin/crud/edit_z', $data);
     }
+    public function update_z($id)
+    {
+        if (!$this->validate([
+            'nama' => 'required',
+            'tanggal' => 'required',
+            'jenis_zakat' => 'required',
+            'jumlah' => 'required'
+        ])) {
+           return redirect()->to('/czakat');
+    }
+    $model = new M_zakat();
+  
+        $data = [
+            'nama' => $this->request->getPost('nama'),
+            'tanggal' => $this->request->getPost('tanggal'),
+            'jenis_zakat' => $this->request->getPost('jenis_zakat'),
+            'jumlah' => $this->request->getPost('jumlah'),
+        ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/zakat');
+     }
+     public function delete_t($id) {
+        $model = new M_total();
+  
+        $model->delete($id);
+        return redirect()->to('/total');
+     }
+    public function edit_t($id)
+    {
+        $model = new M_total();
+        $total = $model->find($id);
+  
+        $data = [
+           'total' => $total
+        ];
+  
+        return view('admin/crud/edit_t', $data);
+    }
+    public function update_t($id)
+    {
+        if (!$this->validate([
+            'tahun' => 'required',
+            'bulan' => 'required',
+            'jumlah_km' => 'required',
+            'jumlah_kk' => 'required',
+            'total' => 'required'
+        ])) {
+           return redirect()->to('/ctotal');
+    }
+    $model = new M_total();
+  
+        $data = [
+            'tahun' => $this->request->getPost('tahun'),
+            'bulan' => $this->request->getPost('bulan'),
+            'jumlah_km' => $this->request->getPost('jumlah_km'),
+            'jumlah_kk' => $this->request->getPost('jumlah_kk'),
+            'total' => $this->request->getPost('total'),
+        ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/total');
+     }
 }
+
