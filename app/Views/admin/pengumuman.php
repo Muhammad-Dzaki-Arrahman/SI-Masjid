@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="kegiatan">
+          <a class="nav-link " href="kegiatan">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="http://localhost:8081/pengumuman">
+          <a class="nav-link active" href="pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -123,30 +123,30 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Pengumuman</h6>
-                <a href="cpengumuman"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+              <a href="cpengumuman"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+              <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class=" font-weight-bolder ps-2">No</th>
-                      <th class=" font-weight-bolder  ps-2">Judul Pengumuman</th>
-                      <th class=" font-weight-bolder  ps-2">Slug Pengumuman</th>
-                      <th class=" font-weight-bolder  ps-2">Tanggal</th>
-                      <th class=" font-weight-bolder  ps-5">Action</th>
-                    </tr>
+                      <th class="  text-center ">No</th>
+                      <th class="  ps-2">Judul Pengumuman</th>
+                      <th class="  ps-2">Slug Pengumuman</th>
+                      <th class="  ps-2">Tanggal</th>
+                      <th class="  ps-5">Action</th>
+                      </tr>
                   </thead>
                   <tbody>
-                  <?php $no=1; ?> 
+                    <?php $no=1; ?>  
                     <?php
-                      
 
                         foreach ($pengumuman as $pgn) {
 
                     ?>
                 <tr>
-                    <th><?= $no; ?></th>
+                    <th class="text-center"><?= $no; ?></th>
                     <td><?php echo $pgn['Judul_Pengumuman']; ?></td>
                     <td><?php echo $pgn['Slug_Pengumuman']; ?></td>
 <!--                     <td class="align-middle text-center text-sm">
@@ -281,4 +281,3 @@
 </body>
 
 </html>
-
