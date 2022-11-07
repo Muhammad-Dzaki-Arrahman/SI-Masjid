@@ -90,6 +90,18 @@
         </li>
       </ul>
     </div>
+                <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="<?= base_url('argon')?>/assets/img/twk.png">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Kunjungin Web berikut</h6>
+            <p class="text-xs font-weight-bold mb-0">Tawakal Mosque</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="home" type="button">Here</a>
+    </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -118,11 +130,11 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">No</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Judul Berita</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Slug Berita</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Tanggal</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Action</th>
+                    <th class=" font-weight-bolder ps-2">No</th>
+                      <th class=" font-weight-bolder ps-2">Judul Berita</th>
+                      <th class=" font-weight-bolder ps-2">Slug Berita</th>
+                      <th class=" font-weight-bolder ps-2">Tanggal</th>
+                      <th class=" font-weight-bolder ps-2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
