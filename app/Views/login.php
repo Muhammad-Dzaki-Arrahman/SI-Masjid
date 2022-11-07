@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <p class="text-sm" style="color: grey;">Klik SIM Jika ingin mengunjungi website Sistem Informasi Masjid Tawakal</p>
+          <p class="text-sm" style="color: grey;">Klik <b>SIM</b> Jika ingin mengunjungi website Sistem Informasi Masjid Tawakal</p>
         </div>
         <div class="row">
           <!-- /.col -->
