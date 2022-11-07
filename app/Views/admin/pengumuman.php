@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="kegiatan">
+          <a class="nav-link" href="kegiatan">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="">
+          <a class="nav-link active" href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,18 +62,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dakwah</span>
+            <span class="nav-link-text ms-1">Berita</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -89,6 +89,18 @@
           </a>
         </li>
       </ul>
+    </div>
+                <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="<?= base_url('argon')?>/assets/img/twk.png">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Kunjungin Web berikut</h6>
+            <p class="text-xs font-weight-bold mb-0">Tawakal Mosque</p>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="home" type="button">Here</a>
     </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
@@ -111,39 +123,40 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Pengumuman</h6>
-              <a href="cpengumuman"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+                <a href="cpengumuman"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Judul Pengumuman</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Isi Pengumuman</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Tanggal</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
-                      </tr>
+                      <th class=" font-weight-bolder ps-2">No</th>
+                      <th class=" font-weight-bolder  ps-2">Judul Pengumuman</th>
+                      <th class=" font-weight-bolder  ps-2">Slug Pengumuman</th>
+                      <th class=" font-weight-bolder  ps-2">Tanggal</th>
+                      <th class=" font-weight-bolder  ps-5">Action</th>
+                    </tr>
                   </thead>
                   <tbody>
-                    <?php $no=1; ?>  
+                  <?php $no=1; ?> 
                     <?php
+                      
 
                         foreach ($pengumuman as $pgn) {
 
                     ?>
                 <tr>
                     <th><?= $no; ?></th>
-                    <td><?php echo $pgn['judul_pengumuman']; ?></td>
-                    <td><?php echo $pgn['isi_pengumuman']; ?></td>
+                    <td><?php echo $pgn['Judul_Pengumuman']; ?></td>
+                    <td><?php echo $pgn['Slug_Pengumuman']; ?></td>
 <!--                     <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Tanggal</span>
                       </td> -->
-                    <td><?php echo $pgn['tanggal']; ?></td>
+                    <td><?php echo $pgn['Tanggal']; ?></td>
                 <td>
                   <div>
-                  <a href="/admin/crud/edit_p/<?= $pgn['id_pengumuman'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
-                  <a href="/admin/delete-userp/<?= $pgn['id_pengumuman'] ?>"><button type="button" class="btn btn-danger card-text-font w-100 mt-1">Delete</button></a>
+                  <a href="/admin/crud/edit_p/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
+                  <a href="/admin/delete-userp/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
                     </form>
                   </div>
                 </td>
@@ -268,3 +281,4 @@
 </body>
 
 </html>
+
