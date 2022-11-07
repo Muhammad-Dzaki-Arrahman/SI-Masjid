@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/pengumuman">
+          <a class="nav-link " href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,18 +62,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dakwah</span>
+            <span class="nav-link-text ms-1">Berita</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -111,17 +111,18 @@
             <div class="card-header pb-0">
               <h6>Zakat</h6>
                 <a href="czakat"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+                <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Nama</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Tanggal</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Jenis Zakat</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Jumlah</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
+                      <th class="ps-2">Nama</th>
+                      <th class="ps-2">Tanggal</th>
+                      <th class="ps-2">Jenis Zakat</th>
+                      <th class="ps-2">Jumlah</th>
+                      <th class="ps-5">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -131,7 +132,7 @@
 
                     ?>
                 <tr>
-                <td><?php echo $zkt['nama']; ?></td>
+                <td ><?php echo $zkt['nama']; ?></td>
                       <td><?php echo $zkt['tanggal']; ?></td>
                       <td><?php echo $zkt['jenis_zakat']; ?></td>
                       <td><?php echo $zkt['jumlah']; ?></td>
