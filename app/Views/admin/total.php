@@ -44,18 +44,18 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		xValueFormatString: "MMM, YYYY",
 		yValueFormatString: "Rp###.#",
 		dataPoints: [        
-			{ x: new Date(2022, 00, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-			{ x: new Date(2022, 01, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-			{ x: new Date(2022, 02, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-			{ x: new Date(2022, 03, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-			{ x: new Date(2022, 04, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-			{ x: new Date(2022, 05, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-			{ x: new Date(2022, 06, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-			{ x: new Date(2022, 07, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-			{ x: new Date(2022, 08, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-			{ x: new Date(2022, 09, 1) , y: 8000000, indexLabel: "naik", markerType: "", markerColor: "black" },
-			{ x: new Date(2022, 10, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-			{ x: new Date(2022, 11, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" }
+			{ x: new Date(2022, 00, 1), y: 592000, indexLabel: "", markerType: "",  markerColor: "" },
+			{ x: new Date(2022, 01, 1), y: 1008000, indexLabel: "naik", markerType: "triangle",  markerColor: "#6B8E23" },
+			{ x: new Date(2022, 02, 1) , y: 946000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 03, 1) , y: 1510000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 04, 1) , y: 1039000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 05, 1) , y: 1250000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 06, 1) , y: 1574000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 07, 1) , y: 821000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 08, 1) , y: 1445000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 09, 1) , y: 320000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 10, 1) , y: 0, indexLabel: "", markerType: "", markerColor: "" },
+			{ x: new Date(2022, 11, 1) , y: 0, indexLabel: "", markerType: "", markerColor: "" }
 		]
 	}]
 });
