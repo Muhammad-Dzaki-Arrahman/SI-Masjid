@@ -73,16 +73,16 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <a href="" class="navbar-brand ms-lg-5">
-            <h3 class="m-0 text-uppercase text-dark"><span class="fi fi-lpg"></span>Sistem Informasi Masjid</h3>
+            <h3 class="m-0 text-uppercase text-dark">Sistem Informasi Masjid</h3>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="home" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">Profile</a>
-                <a href="service.html" class="nav-item nav-link">Kajian</a>
+                <a href="kajian" class="nav-item nav-link">Kajian</a>
                 <a href="product.html" class="nav-item nav-link">Pengumuman</a>
                 <a href="product.html" class="nav-item nav-link">Dakwah</a>
             </div>
@@ -100,7 +100,7 @@
                     <h1 class="text-uppercase text-white mb-lg-4">Rajabasa</h1>
                     <p class="fs-4 text-white mb-lg-4">Pusat Kegiatan Ibadah Umat Muslim daerah Rajabasa </p>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Read More</a>
+                        <a href="login" class="btn btn-outline-light border-2 py-md-3 px-md-5 me-5">Kunjungi Website Admin SIM</a>
 <!--                             <button type="button" class="btn-play" data-bs-toggle="modal"
                             data-src="<?= base_url('argon') ?>/assets/img/mecca.mp3" data-bs-target="#videoModal">
                             <span></span>
@@ -181,7 +181,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Boarding</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Feeding</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Grooming</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Training</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Exercise</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
                         <div>
                             <h5 class="text-uppercase mb-3">Pet Treatment</h5>
                             <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +245,7 @@
     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Products</h6>
+                <h6 class="text-primary text-uppercase">Pengumuman</h6>
                 <h1 class="display-5 text-uppercase mb-0">Products For Your Best Friends</h1>
             </div>
             <div class="owl-carousel product-carousel">
@@ -633,21 +633,21 @@
         <div class="container pt-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@example.com</p>
-                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Alamat</h5>
+                    <p class="mb-4">Masjid Tawakal</p>
+                    <p class="mb-4">Pusat Kegiatan Ibadah Umat Muslim daerah Rajabasa</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Jalan Sukses No.2 A, Rajabasa, Bandar Lampung</p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>tawakal@ymail.co.id</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>(+62) 8145 1795 0887</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                        <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Profile</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Kajian</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Pengumuman</a>
+                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Dakwah</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -697,10 +697,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Sistem Informasi Masjid Tawakal</a>. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -710,7 +707,6 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
