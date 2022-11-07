@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/pengumuman">
+          <a class="nav-link " href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,18 +62,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dakwah</span>
+            <span class="nav-link-text ms-1">Berita</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -123,17 +123,18 @@
             <div class="card-header pb-0">
               <h6>Kas Masuk</h6>
                 <a href="ckasmasuk"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+                <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Nama</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Jumlah</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Tanggal</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Keterangan</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
+                      <th class="  ps-6">Nama</th>
+                      <th class="  ps-2">Jumlah</th>
+                      <th class="  ps-2">Tanggal</th>
+                      <th class="  ps-2">Keterangan</th>
+                      <th class="  ps-5">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -146,7 +147,7 @@
                     <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="<?= base_url('argon') ?>/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                            <img src="<?= base_url('argon') ?>/assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm"><?php echo $ksm['nama']; ?></h6>
@@ -166,7 +167,7 @@
                   </div>
                 </td>
                 </tr>
-                    <?php 
+                    <?php
                     }
                     ?>
                   </tbody>
