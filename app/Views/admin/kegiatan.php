@@ -124,17 +124,18 @@
             <div class="card-header pb-0">
               <h6>Kegiatan</h6>
                 <a href="ckegiatan"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
+                <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class=" font-weight-bolder ps-2">Nama Ustad</th>
-                      <th class=" font-weight-bolder ps-2">Nama Kajian</th>
-                      <th class=" font-weight-bolder ps-2">Hari</th>
-                      <th class=" font-weight-bolder ps-2">Judul Kajian</th>
-                      <th class=" font-weight-bolder ps-5">Action</th>
+                      <th class="  ps-7">Nama Ustad</th>
+                      <th class="  ps-2">Nama Kajian</th>
+                      <th class="  ps-2">Hari</th>
+                      <th class="  ps-2">Judul Kajian</th>
+                      <th class="  ps-5">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -152,7 +153,7 @@
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">
                               <?php echo $kgt['nama_ustad']; ?></h6>
-                            <p class="text-xs text-secondary mb-0"><?php echo $kgt['nama_ustad']; ?>@gmail.com</p>
+                            <p class="text-xs text-secondary mb-0">Imam dan Pemateri Masjid Tawakal dihari <?= $kgt['hari'] ?></p>
                           </div>
                         </div>
                     </td>
@@ -162,7 +163,7 @@
                       </td>
                     <td><?php echo $kgt['judul_kajian']; ?></td>
                 <td>
-                  <div>
+                  <div class="text-center">
                     <a href="/admin/crud/edit_k/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
                     <a href="/admin/delete-userk/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
                   </div>
