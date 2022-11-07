@@ -19,6 +19,50 @@
   <link href="<?= base_url('argon')?>/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="<?= base_url('argon')?>/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	animationEnabled: true,
+	title:{
+		text: "Total Kas Masjid Tawakal 2022"   
+	},
+	axisX: {
+		interval: 1,
+		intervalType: "month",
+		valueFormatString: "MMM"
+	},
+	axisY:{
+		title: "",
+		includeZero: true,
+		valueFormatString: "Rp#0"
+	},
+	data: [{        
+		type: "line",
+		markerSize: 12,
+		xValueFormatString: "MMM, YYYY",
+		yValueFormatString: "Rp###.#",
+		dataPoints: [        
+			{ x: new Date(2022, 00, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
+			{ x: new Date(2022, 01, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
+			{ x: new Date(2022, 02, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 03, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 04, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 05, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 06, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 07, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 08, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 09, 1) , y: 8000000, indexLabel: "naik", markerType: "", markerColor: "black" },
+			{ x: new Date(2022, 10, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 11, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -38,7 +82,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Control pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('dashboard')?>">
+          <a class="nav-link active" href="<?= base_url('dashboard')?>">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -145,11 +189,8 @@
                     </td>
                 <td>
                   <div>
-                    <a class="btn btn-warning mr-3" href="">Edit</a>
-                    <form action="">
-                      <input name="_method" value="DELETE" type="hidden">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                  <a href="/admin/crud/edit_t/<?= $ttl['id_total'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
+                  <a href="/admin/delete-usert/<?= $ttl['id_total'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
                   </div>
                 </td>
                 </tr>
@@ -163,6 +204,7 @@
           </div>
         </div>
       </div>
+      <div id="chartContainer" style="height: 370px; width: 100%;"></div>
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -267,6 +309,7 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?= base_url('argon')?>/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>
