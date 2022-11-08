@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link active " href="http://localhost:8080/pengumuman">
+          <a class="nav-link active " href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,11 +62,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Dakwah</span>
+            <span class="nav-link-text ms-1">Berita</span>
           </a>
         </li>
         <li class="nav-item mt-3">
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -110,22 +110,23 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Tambah Data Disini</h6>
+              <h6>Edit Data Disini</h6>
             </div>
-<form action="/admin/update-userp/<?= $pengumuman['id_pengumuman'] ?>" method="post">
+<form action="/admin/update-userp/<?= $pengumuman['Id_Pengumuman'] ?>" method="post">
   <div class="form-group">
-    <label for="judul_pengumuman">Judul Pengumuman</label>
-    <input type="text" class="form-control" id="judul_pengumuman" name="judul_pengumuman" value="<?= $pengumuman['judul_pengumuman'] ?>">
+    <label for="Judul_Pengumuman">Judul Pengumuman</label>
+    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman" value="<?= $pengumuman['Judul_Pengumuman'] ?>">
   </div>
   <div class="form-group">
-    <label for="isi_pengumuman">Isi Pengumuman</label>
-    <input type="text" class="form-control" id="isi_pengumuman" name="isi_pengumuman" value="<?= $pengumuman['isi_pengumuman'] ?>">
+    <label for="Slug_Pengumuman">Slug Pengumuman</label>
+    <input type="text" class="form-control" id="Slug_Pengumuman" name="Slug_Pengumuman" value="<?= $pengumuman['Slug_Pengumuman'] ?>">
   </div>
     <div class="form-group">
-    <label for="tanggal">Tanggal</label>
-    <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= $pengumuman['tanggal'] ?>">
+    <label for="Tanggal">Tanggal</label>
+    <input type="date" class="form-control" id="Tanggal" name="Tanggal" value="<?= $pengumuman['Tanggal'] ?>">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/pengumuman"><button type="button" class="btn btn-warning">Kembali</button></a>
 </form>
           </div>
         </div>
