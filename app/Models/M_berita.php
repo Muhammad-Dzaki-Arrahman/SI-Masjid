@@ -6,18 +6,19 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class M_berita extends Model {
-        protected $table = 'tbl_berita';
-        protected $allowedFields    = ['judul_berita', 'slug_berita', 'tanggal'];
+    protected $table            = 'tbl_berita';
+    protected $primaryKey       = 'id_berita';
+    protected $useAutoIncrement = true;
+    protected $returnType       = 'array';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = ['judul_berita', 'slug_berita','tanggal'];
 
-        public function getBerita($where = false){
-            if($where === false){
-                return $this->findAll();
-            }
-            else{
-                return $this->getWhere($where);
-            }
-        }
+    // Dates
+    protected $useTimestamps = false;
 
 }
+
+?>
 
 ?>

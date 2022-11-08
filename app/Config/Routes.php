@@ -39,10 +39,11 @@ $routes->set404Override();
 //Admin
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'SimController::index');
-$routes->get('/dashboard', 'SimController::dashboard');
+$routes->get('/dashboard','SimController::dashboard');
 $routes->get('/kegiatan', 'SimController::kegiatan');
-$routes->get('/pengumuman', 'SimController::pengumuman');
+$routes->get('/pengumuman','SimController::pengumuman');
 $routes->get('/profile', 'SimController::profile');
+$routes->get('/berita', 'SimController::berita');
 $routes->get('/kasmasuk', 'SimController::kasmasuk');
 $routes->get('/ckasmasuk', 'SimController::ckasmasuk');
 $routes->post('/storeksm', 'CRUDController::storeksm');
@@ -60,25 +61,19 @@ $routes->post('/dashboard', 'SimController::dashboard');
 $routes->get('/ckegiatan', 'SimController::ckegiatan');
 $routes->post('/storekgt', 'CRUDController::storekgt');
 $routes->get('/cpengumuman', 'SimController::cpengumuman');
+$routes->get('/cberita', 'SimController::cberita');
 $routes->post('/storepgn', 'CRUDController::storepgn');
+$routes->post('/admin/save-berita', 'SimController::save_b');
 $routes->get('/admin/delete-userk/(:num)', 'SimController::delete_k/$1');
 $routes->get('/admin/delete-userp/(:num)', 'SimController::delete_p/$1');
+$routes->get('/admin/delete-userb/(:num)', 'SimController::delete_b/$1');
 $routes->get('/admin/crud/edit_k/(:num)', 'SimController::edit_k/$1');
+$routes->get('/admin/crud/edit_b/(:num)', 'SimController::edit_b/$1');
 $routes->get('/admin/crud/edit_p/(:num)', 'SimController::edit_p/$1');
 $routes->post('/admin/update-userk/(:num)', 'SimController::update_k/$1');
+$routes->post('/admin/update-userb/(:num)', 'SimController::update_b/$1');
 $routes->post('/admin/update-userp/(:num)', 'SimController::update_p/$1');
-$routes->post('/admin/update-userkm/(:num)', 'SimController::update_km/$1');
-$routes->get('/admin/crud/edit_km/(:num)', 'SimController::edit_km/$1');
-$routes->get('/admin/delete-userkm/(:num)', 'SimController::delete_km/$1');
-$routes->post('/admin/update-userkk/(:num)', 'SimController::update_kk/$1');
-$routes->get('/admin/crud/edit_kk/(:num)', 'SimController::edit_kk/$1');
-$routes->get('/admin/delete-userkk/(:num)', 'SimController::delete_kk/$1');
-$routes->post('/admin/update-userz/(:num)', 'SimController::update_z/$1');
-$routes->get('/admin/crud/edit_z/(:num)', 'SimController::edit_z/$1');
-$routes->get('/admin/delete-userz/(:num)', 'SimController::delete_z/$1');
-$routes->post('/admin/update-usert/(:num)', 'SimController::update_t/$1');
-$routes->get('/admin/crud/edit_t/(:num)', 'SimController::edit_t/$1');
-$routes->get('/admin/delete-usert/(:num)', 'SimController::delete_t/$1');
+
 
 //User
 $routes->get('/home', 'User::home');

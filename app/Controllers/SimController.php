@@ -16,7 +16,7 @@ class SimController extends BaseController
 {
     public function index()
     {  
-        return view('login');
+        return view('admin/login');
     }
     public function cek_login()
     {
@@ -25,16 +25,16 @@ class SimController extends BaseController
         $username = $this->request->getPost('uname');
         $cekUsername = $modelLogin->getAdmin(['username'=>$username])->getNumRows();
         if($cekUsername == 0){
-            return redirect()->to('login');
+            return redirect()->to('admin/login');
         }else{
             $dataUser = $modelLogin->getAdmin(['username'=>$username])->getRowArray();
             $password = $this->request->getPost('password');
             $verifyPassword = password_verify($password, $dataUser['password']);
             if (!$verifyPassword) {
                 // code...
-                return view('login');
+                return view('admin/login');
             }else{
-            return redirect()->to('dashboard');
+            return view('admin/dashboard');
         }
         }
     }
@@ -153,6 +153,28 @@ public function save_p()
    
          return redirect()->to('/pengumuman');
     }
+public function save_b()
+    {
+        if (!$this->validate([
+            'judul_berita' => 'required',
+            'slug_berita' => 'required',
+            'tanggal' => 'required'
+         ])) {
+            return redirect()->to('/cberita');
+         }
+   
+         $model = new M_berita();
+   
+         $data = [
+            'judul_berita' => $this->request->getPost('judul_berita'),
+            'slug_berita' => $this->request->getPost('slug_berita'),
+            'tanggal' => $this->request->getPost('tanggal'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/berita');
+    }
     
     public function save_k()
     {
@@ -186,6 +208,13 @@ public function save_p()
         return redirect()->to('/kegiatan');
      }
 
+     public function delete_b($id) {
+        $model = new M_berita();
+  
+        $model->delete($id);
+        return redirect()->to('/berita');
+     }
+
     public function delete_p($id) {
         $model = new M_pengumuman();
   
@@ -202,6 +231,17 @@ public function save_p()
         ];
   
         return view('admin/crud/edit_k', $data);
+     }
+     
+     public function edit_b($id){
+        $model = new M_berita();
+        $berita = $model->find($id);
+  
+        $data = [
+           'berita' => $berita
+        ];
+  
+        return view('admin/crud/edit_b', $data);
      }
      public function edit_p($id){
         $model = new M_pengumuman();
@@ -239,6 +279,29 @@ public function save_p()
         return redirect()->to('/kegiatan');
      }
      
+     public function update_b($id)
+     {
+        if (!$this->validate([
+            'judul_berita' => 'required',
+            'slug_berita' => 'required',
+            'tanggal' => 'required'
+        ])) {
+           return redirect()->to('/cberita');
+        }
+  
+        $model = new M_berita();
+  
+        $data = [
+            'judul_berita' => $this->request->getPost('judul_berita'),
+            'slug_berita' => $this->request->getPost('slug_berita'),
+            'tanggal' => $this->request->getPost('tanggal'),
+        ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/berita');
+     }
+     
      public function update_p($id)
      {
         if (!$this->validate([
@@ -269,6 +332,10 @@ public function save_p()
         public function cpengumuman()
     {
         return view('admin/crud/cpengumuman');
+    }
+        public function cberita()
+    {
+        return view('admin/crud/cberita');
     }
         public function profile()
     {  
