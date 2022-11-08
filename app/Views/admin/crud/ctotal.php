@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/pengumuman">
+          <a class="nav-link " href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8080/login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -134,6 +134,7 @@
     <input type="text" class="form-control" id="total" name="total">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="total"><button type="button" class="btn btn-warning">Kembali</button></a>
 </form>
           </div>
         </div>
