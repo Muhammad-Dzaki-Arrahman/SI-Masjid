@@ -23,41 +23,41 @@
 window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
-  theme: "light2", // "light1", "light2", "dark1", "dark2"
-  animationEnabled: true,
-  title:{
-    text: "Total Kas Masjid Tawakal 2022"   
-  },
-  axisX: {
-    interval: 1,
-    intervalType: "month",
-    valueFormatString: "MMM"
-  },
-  axisY:{
-    title: "",
-    includeZero: true,
-    valueFormatString: "Rp#0"
-  },
-  data: [{        
-    type: "line",
-    markerSize: 12,
-    xValueFormatString: "MMM, YYYY",
-    yValueFormatString: "Rp###.#",
-    dataPoints: [        
-      { x: new Date(2022, 00, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-      { x: new Date(2022, 01, 1), y: 0, indexLabel: "gain", markerType: "triangle",  markerColor: "#6B8E23" },
-      { x: new Date(2022, 02, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-      { x: new Date(2022, 03, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" },
-      { x: new Date(2022, 04, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-      { x: new Date(2022, 05, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-      { x: new Date(2022, 06, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "black" },
-      { x: new Date(2022, 07, 1) , y: 5000000, indexLabel: "gain", markerType: "", markerColor: "#6B8E23" },
-      { x: new Date(2022, 08, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-      { x: new Date(2022, 09, 1) , y: 8000000, indexLabel: "gain", markerType: "", markerColor: "black" },
-      { x: new Date(2022, 10, 1) , y: 0, indexLabel: "gain", markerType: "triangle", markerColor: "#6B8E23" },
-      { x: new Date(2022, 11, 1) , y: 0, indexLabel: "loss", markerType: "cross", markerColor: "tomato" }
-    ]
-  }]
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	animationEnabled: true,
+	title:{
+		text: "Total Kas Masjid Tawakal 2022"   
+	},
+	axisX: {
+		interval: 1,
+		intervalType: "month",
+		valueFormatString: "MMM"
+	},
+	axisY:{
+		title: "",
+		includeZero: true,
+		valueFormatString: "Rp#0"
+	},
+	data: [{        
+		type: "line",
+		markerSize: 12,
+		xValueFormatString: "MMM, YYYY",
+		yValueFormatString: "Rp###.#",
+		dataPoints: [        
+			{ x: new Date(2022, 00, 1) , y: 592000, indexLabel: "", markerType: "",  markerColor: "" },
+			{ x: new Date(2022, 01, 1) , y: 1008000, indexLabel: "naik", markerType: "triangle",  markerColor: "#6B8E23" },
+			{ x: new Date(2022, 02, 1) , y: 946000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 03, 1) , y: 1510000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 04, 1) , y: 1039000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 05, 1) , y: 1250000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 06, 1) , y: 1574000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 07, 1) , y: 821000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 08, 1) , y: 1445000, indexLabel: "naik", markerType: "triangle", markerColor: "#6B8E23" },
+			{ x: new Date(2022, 09, 1) , y: 320000, indexLabel: "turun", markerType: "cross", markerColor: "tomato" },
+			{ x: new Date(2022, 10, 1) , y: 0, indexLabel: "", markerType: "", markerColor: "" },
+			{ x: new Date(2022, 11, 1) , y: 0, indexLabel: "", markerType: "", markerColor: "" }
+		]
+	}]
 });
 chart.render();
 
@@ -98,7 +98,7 @@ chart.render();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8081/pengumuman">
+          <a class="nav-link " href="http://localhost:8080/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -106,18 +106,18 @@ chart.render();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="berita">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Berita</span>
+            <span class="nav-link-text ms-1">Dakwah</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="profile">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -125,7 +125,7 @@ chart.render();
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8081/login">
+          <a class="nav-link " href="http://localhost:8080/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -155,19 +155,18 @@ chart.render();
             <div class="card-header pb-0">
               <h6>Total Kas</h6>
                 <a href="ctotal"class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
-                <a href="dashboard"><button type="button" class="btn btn-warning">Kembali</button></a>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="  text-center">Tahun</th>
-                      <th class="  ps-2">Bulan</th>
-                      <th class="  ps-2">Jumlah Kas Masuk</th>
-                      <th class="  ps-2">Jumlah Kas Keluar</th>
-                      <th class="  ps-2">Total</th>
-                      <th class="  ps-7">Action</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Tahun</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Bulan</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Jumlah Kas Masuk</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Jumlah Kas Keluar</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Total</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -177,19 +176,19 @@ chart.render();
 
                     ?>
                 <tr>
-                      <td class="text-center"><b><?php echo $ttl['tahun']; ?></b></td>
+                      <td><?php echo $ttl['tahun']; ?></td>
                       <td><?php echo $ttl['bulan']; ?></td>
                       <td><?php echo $ttl['jumlah_km']; ?></td>
                       <td><?php echo $ttl['jumlah_kk']; ?></td>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm text-center"><?php echo $ttl['total']; ?></h6>
+                            <h6 class="mb-0 text-sm"><?php echo $ttl['total']; ?></h6>
                           </div>
                         </div>
                     </td>
                 <td>
-                  <div class="text-center">
+                  <div>
                   <a href="/admin/crud/edit_t/<?= $ttl['id_total'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
                   <a href="/admin/delete-usert/<?= $ttl['id_total'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
                   </div>
