@@ -77,6 +77,9 @@ $routes->post('/admin/update-userp/(:num)', 'SimController::update_p/$1');
 
 //User
 $routes->get('/home', 'User::home');
+$routes->get('/kajian', 'User::kajian');
+$routes->get('/user-pengumuman', 'User::pengumuman');
+$routes->get('/tes', 'User::tes');
 
 /*
  * --------------------------------------------------------------------
