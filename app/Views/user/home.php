@@ -15,6 +15,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
 />
+    <link rel="stylesheet" href="<?= base_url('fa4')?>/css/font-awesome.min.css">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,6 +33,27 @@
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url('usr')?>/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+ window.onload = function() { jam(); }
+
+ function jam() {
+  var e = document.getElementById('jam'),
+  d = new Date(), h, m, s;
+  h = d.getHours();
+  m = set(d.getMinutes());
+  s = set(d.getSeconds());
+
+  e.innerHTML = h +':'+ m +':'+ s;
+
+  setTimeout('jam()', 1000);
+ }
+
+ function set(e) {
+  e = e < 10 ? '0'+ e : e;
+  return e;
+ }
+</script>
 </head>
 
 <body>
@@ -51,7 +73,7 @@
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Kami</h6>
+                        <h6 class="text-uppercase mb-1">Email</h6>
                         <span>tawakal@ymail.co.id</span>
                     </div>
                 </div>
@@ -60,7 +82,7 @@
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                     <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Telepon Kami</h6>
+                        <h6 class="text-uppercase mb-1">Telepon</h6>
                         <span class="fi fi-id" style="background-color: black;"></span> <span>(+62) 8145 1795 0887</span>
                     </div>
                 </div>
@@ -83,7 +105,7 @@
                 <a href="home" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">Profile</a>
                 <a href="kajian" class="nav-item nav-link">Kajian</a>
-                <a href="product.html" class="nav-item nav-link">Pengumuman</a>
+                <a href="user-pengumuman" class="nav-item nav-link">Pengumuman</a>
                 <a href="product.html" class="nav-item nav-link">Dakwah</a>
             </div>
         </div>
@@ -175,67 +197,33 @@
                 <h1 class="display-5 text-uppercase mb-0">Kajian Masjid Tawakal</h1>
             </div>
             <div class="row g-5">
+                <?php
+
+                        foreach ($kegiatan as $kgt) {
+
+                    ?>
                 <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-house display-1 text-primary me-4"></i>
+                    <div class="service-item bg-light d-flex p-2">
+                        <i class="fa fa-calendar-check-o display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Boarding</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
+                            <h5 class="text-uppercase mb-3"><?= $kgt['nama_kajian'] ?></h5>
+                            <p><?= $kgt['judul_kajian'] ?></p>
                             <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-food display-1 text-primary me-4"></i>
+                    <div class="service-item bg-light d-flex p-2">
+                        <i class="fa fa-user-o display-1 text-primary me-4"></i>
                         <div>
-                            <h5 class="text-uppercase mb-3">Pet Feeding</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
+                            <h5 class="text-uppercase mb-3"><?= $kgt['nama_ustad'] ?> </h5>
+                            <p><?= $kgt['nama_kajian'] ?> ini akan dibimbing oleh <?= $kgt['nama_ustad'] ?> </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-grooming display-1 text-primary me-4"></i>
-                        <div>
-                            <h5 class="text-uppercase mb-3">Pet Grooming</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-cat display-1 text-primary me-4"></i>
-                        <div>
-                            <h5 class="text-uppercase mb-3">Pet Training</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-dog display-1 text-primary me-4"></i>
-                        <div>
-                            <h5 class="text-uppercase mb-3">Pet Exercise</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="service-item bg-light d-flex p-4">
-                        <i class="flaticon-vaccine display-1 text-primary me-4"></i>
-                        <div>
-                            <h5 class="text-uppercase mb-3">Pet Treatment</h5>
-                            <p>Kasd dolor no lorem sit tempor at justo rebum rebum stet justo elitr dolor amet sit</p>
-                            <a class="text-primary text-uppercase" href="kajian">Read More<i class="bi bi-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                    }
+                    ?>
         </div>
     </div>
     <!-- Services End -->
@@ -246,64 +234,41 @@
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Pengumuman</h6>
-                <h1 class="display-5 text-uppercase mb-0">Products For Your Best Friends</h1>
+                <h1 class="display-5 text-uppercase mb-0">Cek Informasi dan dakwah Masjid Tawakal</h1>
             </div>
             <div class="owl-carousel product-carousel">
+                    <?php
+
+                        foreach ($pengumuman as $pgn) {
+
+                    ?>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-1.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
+                        <img src="<?= base_url('argon') ?>/assets/img/marketing.png" class="img-fluid mb-4" alt="">
+                        <h6 class="text-uppercase"><?= $pgn['Judul_Pengumuman'] ?></h6>
+                        <h5 class="text-primary mb-0">Tanggal : <?= $pgn['Tanggal'] ?></h5>
                         <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href="">Read More</i></a>
                         </div>
                     </div>
                 </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-2.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-3.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pb-5">
-                    <div class="product-item position-relative bg-light d-flex flex-column text-center">
-                        <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-4.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
-                        <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+                <?php
+
+                        foreach ($berita as $brt) {
+
+                    ?>
                 <div class="pb-5">
                     <div class="product-item position-relative bg-light d-flex flex-column text-center">
                         <img class="img-fluid mb-4" src="<?= base_url('usr')?>/img/product-2.png" alt="">
-                        <h6 class="text-uppercase">Quality Pet Foods</h6>
-                        <h5 class="text-primary mb-0">$199.00</h5>
+                        <h6 class="text-uppercase"><?= $brt['judul_berita'] ?></h6>
+                        <h5 class="text-primary mb-0">Tanggal : <?= $brt['tanggal'] ?></h5>
                         <div class="btn-action d-flex justify-content-center">
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-cart"></i></a>
-                            <a class="btn btn-primary py-2 px-3" href=""><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary py-2 px-3" href="">Read More</a>
                         </div>
                     </div>
                 </div>
+            <?php } ?>
             </div>
         </div>
     </div>
@@ -311,7 +276,7 @@
 
 
     <!-- Offer Start -->
-    <div class="container-fluid bg-offer my-5 py-5">
+<!--     <div class="container-fluid bg-offer my-5 py-5">
         <div class="container py-5">
             <div class="row gx-5 justify-content-start">
                 <div class="col-lg-7">
@@ -325,12 +290,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Offer End -->
 
 
     <!-- Pricing Plan Start -->
-    <div class="container-fluid py-5">
+<!--     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Pricing Plan</h6>
@@ -438,12 +403,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Pricing Plan End -->
 
 
     <!-- Team Start -->
-    <div class="container-fluid py-5">
+<!--     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Team Members</h6>
@@ -532,12 +497,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid bg-testimonial py-5" style="margin: 45px 0;">
+<!--     <div class="container-fluid bg-testimonial py-5" style="margin: 45px 0;">
         <div class="container py-5">
             <div class="row justify-content-end">
                 <div class="col-lg-7">
@@ -570,12 +535,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Testimonial End -->
 
 
     <!-- Blog Start -->
-    <div class="container-fluid py-5">
+<!--     <div class="container-fluid py-5">
         <div class="container">
             <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
                 <h6 class="text-primary text-uppercase">Latest Blog</h6>
@@ -624,7 +589,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Blog End -->
     
 
@@ -632,7 +597,7 @@
     <div class="container-fluid bg-light mt-5 py-5">
         <div class="container pt-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-5 col-md-8">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Alamat</h5>
                     <p class="mb-4">Masjid Tawakal</p>
                     <p class="mb-4">Pusat Kegiatan Ibadah Umat Muslim daerah Rajabasa</p>
@@ -640,55 +605,37 @@
                     <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>tawakal@ymail.co.id</p>
                     <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>(+62) 8145 1795 0887</p>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Profile</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Kajian</a>
+                        <a class="text-body mb-2" href="kajian"><i class="bi bi-arrow-right text-primary me-2"></i>Kajian</a>
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Pengumuman</a>
                         <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Dakwah</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                        <a class="text-body mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                        <a class="text-body" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Newsletter</h5>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3" placeholder="Your Email">
-                            <button class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
-                    <h6 class="text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="col-lg-3 col-md-8">
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Kunjungi Website Admin Masjid Tawakal</h5>
+                    <h6 class="text-uppercase mt-4 mb-3">Klik Dibawah ini</h6>
                     <div class="d-flex">
-                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-twitter"></i></a>
-                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-facebook"></i></a>
-                        <a class="btn btn-outline-primary btn-square me-2" href="#"><i class="bi bi-linkedin"></i></a>
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="bi bi-instagram"></i></a>
+                        <a class="text-body mb-2" href="login"><i class="bi bi-arrow-right text-primary me-2"></i>Admin Masjid Tawakal </a>
                     </div>
                 </div>
+
+                <!-- Jam Digital -->
+                <h3 class="text-center " style="font-size: 100px; font-family: verdana;" id="jam"></h3>
+
                 <div class="col-12 text-center text-body">
-                    <a class="text-body" href="">Terms & Conditions</a>
+                    <a class="text-body" href="home">Home</a>
                     <span class="mx-1">|</span>
-                    <a class="text-body" href="">Privacy Policy</a>
+                    <a class="text-body" href="profile">Profile</a>
                     <span class="mx-1">|</span>
-                    <a class="text-body" href="">Customer Support</a>
+                    <a class="text-body" href="kajian">Kajian</a>
                     <span class="mx-1">|</span>
-                    <a class="text-body" href="">Payments</a>
+                    <a class="text-body" href="user-pengumuman">Pengumuman</a>
                     <span class="mx-1">|</span>
-                    <a class="text-body" href="">Help</a>
-                    <span class="mx-1">|</span>
-                    <a class="text-body" href="">FAQs</a>
+                    <a class="text-body" href="dakwah">Dakwah</a>
                 </div>
             </div>
         </div>
@@ -706,7 +653,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a> -->
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
