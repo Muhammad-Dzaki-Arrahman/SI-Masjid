@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="http://localhost:8081/pengumuman">
+          <a class="nav-link " href="http://localhost:8080/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -131,11 +131,11 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="  ps-7">Nama Ustad</th>
-                      <th class="  ps-2">Nama Kajian</th>
-                      <th class="  ps-2">Hari</th>
-                      <th class="  ps-2">Judul Kajian</th>
-                      <th class="  ps-5">Action</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Nama Ustad</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder  ps-2">Nama Kajian</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Hari</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder">Judul Kajian</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder ps-3">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -148,12 +148,12 @@
                     <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="<?= base_url('argon') ?>/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                            <img src="<?php echo $kgt['image_url']; ?>" class="avatar avatar-sm me-3" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">
                               <?php echo $kgt['nama_ustad']; ?></h6>
-                            <p class="text-xs text-secondary mb-0">Imam dan Pemateri Masjid Tawakal dihari <?= $kgt['hari'] ?></p>
+                            <p class="text-xs text-secondary mb-0">Imam dan Pemateri Masjid Tawakal Pada <?= $kgt['nama_kajian'] ?></p>
                           </div>
                         </div>
                     </td>
@@ -164,8 +164,8 @@
                     <td><?php echo $kgt['judul_kajian']; ?></td>
                 <td>
                   <div class="text-center">
-                    <a href="/admin/crud/edit_k/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
-                    <a href="/admin/delete-userk/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
+                    <a href="/admin/crud/edit_k/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-warning mr-3"><i class="fa fa-edit"></i></button></a>
+                    <a href="/admin/delete-userk/<?= $kgt['id_kajian'] ?>"><button type="button" class="btn btn-danger mr-3"><i class="fas fa-trash"></i></button></a>
                   </div>
                 </td>
                 </tr>
@@ -179,7 +179,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
+<!--       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -192,7 +192,7 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </main>
   <div class="fixed-plugin">

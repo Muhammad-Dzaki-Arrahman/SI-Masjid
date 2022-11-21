@@ -39,12 +39,17 @@
     <!-- Topbar Start -->
     <div class="container-fluid border-bottom d-none d-lg-block">
         <div class="row gx-0">
+                    <?php
+
+                        foreach ($profile as $profile) {
+
+                    ?>
             <div class="col-lg-4 text-center py-2">
                 <div class="d-inline-flex align-items-center">
                     <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase mb-1">Lokasi Masjid</h6>
-                        <span>Jalan Sukses No.2 A, Rajabasa, Bandar Lampung </span>
+                        <span><?= $profile['alamat'] ?></span>
                     </div>
                 </div>
             </div>
@@ -53,7 +58,7 @@
                     <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase mb-1">Email</h6>
-                        <span>tawakal@ymail.co.id</span>
+                        <span><?= $profile['email'] ?></span>
                     </div>
                 </div>
             </div>
@@ -62,10 +67,11 @@
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
                     <div class="text-start">
                         <h6 class="text-uppercase mb-1">Telepon</h6>
-                        <span class="fi fi-id" style="background-color: black;"></span> <span>(+62) 8145 1795 0887</span>
+                        <span class="fi fi-id" style="background-color: black;"></span> <span><?= $profile['telepon'] ?></span>
                     </div>
                 </div>
             </div>
+        <?php } ?>
         </div>
     </div>
     <!-- Topbar End -->
@@ -106,7 +112,7 @@
                     <div class="row g-0 bg-light overflow-hidden">
                         <div class="col-12 col-sm-5 h-100">
                             <!-- <img class="img-fluid h-100" src="<?= base_url('usr') ?>/img/blog-1.jpg" style="object-fit: cover;"> -->
-                            <img src="<?= base_url('argon') ?>/assets/img/team-2.jpg" class="img-fluid h-100" style="object-fit: cover;">
+                            <img src="<?php echo $kgt['image_url']; ?>" class="img-fluid h-100" style="object-fit: cover;">
                         </div>
                         <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center">
                             <div class="p-4">
@@ -116,7 +122,7 @@
                                 </div>
                                 <h5 class="text-uppercase mb-3"><?= $kgt['nama_ustad'] ?> </h5>
                                 <p><?= $kgt['nama_kajian'] ?> ini akan dibimbing oleh <?= $kgt['nama_ustad'] ?> </p>
-                                <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                                <a class="text-primary text-uppercase" href="detail-kajian/<?= $kgt['id_kajian'] ?>">Read More<i class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -158,7 +164,7 @@
                 <!-- Search Form End -->
 
                 <!-- Category Start -->
-                <div class="mb-5">
+<!--                 <div class="mb-5">
                     <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Categories</h3>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Web Design</a>
@@ -167,7 +173,7 @@
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Keyword Research</a>
                         <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Email Marketing</a>
                     </div>
-                </div>
+                </div> -->
                 <!-- Category End -->
 
                 <!-- Recent Post Start -->
@@ -227,6 +233,12 @@
                 </div> -->
                 <!-- Tags End -->
 
+                <!-- Image Start -->
+                <div class="mb-5">
+                    <img src="<?= base_url('usr') ?>/img/showtwk.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End --> 
+
                 <!-- Plain Text Start -->
                 <div>
                     <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Masjid Tawakal</h3>
@@ -277,9 +289,9 @@
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Alamat</h5>
                     <p class="mb-4">Masjid Tawakal</p>
                     <p class="mb-4">Pusat Kegiatan Ibadah Umat Muslim daerah Rajabasa</p>
-                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Jalan Sukses No.2 A, Rajabasa, Bandar Lampung</p>
-                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>tawakal@ymail.co.id</p>
-                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>(+62) 8145 1795 0887</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i><?= $profile['alamat'] ?></p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i><?= $profile['email'] ?></p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i><?= $profile['telepon'] ?></p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>

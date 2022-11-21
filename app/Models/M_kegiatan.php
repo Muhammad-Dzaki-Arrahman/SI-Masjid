@@ -12,7 +12,7 @@ class M_kegiatan extends Model {
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kajian', 'nama_ustad', 'hari', 'judul_kajian'];
+    protected $allowedFields    = ['nama_kajian', 'nama_ustad', 'hari', 'judul_kajian', 'deskripsi', 'image_url'];
 
         public function getKegiatan($where = false){
             if($where === false){

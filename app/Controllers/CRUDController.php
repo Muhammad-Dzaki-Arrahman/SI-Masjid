@@ -8,6 +8,7 @@ use App\Models\M_pengumuman;
 use App\Models\M_kasmasuk;
 use App\Models\M_kaskeluar;
 use App\Models\M_berita;
+use App\Models\M_profile;
 use App\Models\M_total;
 use App\Models\M_zakat;
 
@@ -19,19 +20,23 @@ class CRUDController extends BaseController
     }
        public function storekgt(){
     if(!$this->validate([
+        'image_url' => 'required',
         'nama_ustad' => 'required',
         'nama_kajian' => 'required',
         'hari' =>'required',
-        'judul_kajian' => 'required'
+        'judul_kajian' => 'required',
+        'deskripsi' => 'required',
     ])) {
-        return redirect()->to('admin/crud/ckegiatan');
+        return redirect()->to('ckegiatan');
     }
         $kegiatanModel = new M_kegiatan();
         $data = [
+            'image_url' => $this->request->getPost('image_url'),
             'nama_ustad' => $this->request->getPost('nama_ustad'),
             'nama_kajian' => $this->request->getPost('nama_kajian'),
             'hari' => $this->request->getPost('hari'),
-            'judul_kajian' => $this->request->getPost('judul_kajian')
+            'judul_kajian' => $this->request->getPost('judul_kajian'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
         ];
 
         $kegiatanModel->save($data);
@@ -55,6 +60,78 @@ class CRUDController extends BaseController
         $pengumumanModel->save($data);
         return redirect()->to('pengumuman');
     }
+
+    // berita
+        public function cberita()
+    {
+        return view('admin/crud/cberita');
+    }
+
+    public function save_b()
+    {
+        if (!$this->validate([
+            'judul_berita' => 'required',
+            'slug_berita' => 'required',
+            'tanggal' => 'required'
+         ])) {
+            return redirect()->to('/cberita');
+         }
+   
+         $model = new M_berita();
+   
+         $data = [
+            'judul_berita' => $this->request->getPost('judul_berita'),
+            'slug_berita' => $this->request->getPost('slug_berita'),
+            'tanggal' => $this->request->getPost('tanggal'),
+         ];
+   
+         $model->save($data);
+   
+         return redirect()->to('/berita');
+    }
+
+        public function edit_b($id){
+        $model = new M_berita();
+        $berita = $model->find($id);
+  
+        $data = [
+           'berita' => $berita
+        ];
+  
+        return view('admin/crud/edit_b', $data);
+     }
+
+     public function update_b($id)
+     {
+        if (!$this->validate([
+            'judul_berita' => 'required',
+            'slug_berita' => 'required',
+            'tanggal' => 'required'
+        ])) {
+           return redirect()->to('/cberita');
+        }
+  
+        $model = new M_berita();
+  
+        $data = [
+            'judul_berita' => $this->request->getPost('judul_berita'),
+            'slug_berita' => $this->request->getPost('slug_berita'),
+            'tanggal' => $this->request->getPost('tanggal'),
+        ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/berita');
+     }
+
+          public function delete_b($id) {
+        $model = new M_berita();
+  
+        $model->delete($id);
+        return redirect()->to('/berita');
+     }
+
+     //kasmasuk
        public function storeksm(){
         if(!$this->validate([
             'nama' => 'required',
@@ -298,5 +375,33 @@ class CRUDController extends BaseController
         $model->update($id, $data);
   
         return redirect()->to('/total');
+     }
+          public function update_profile($id)
+     {
+        if (!$this->validate([
+            'telepon' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
+            'kota' => 'required',
+            'provinsi' => 'required',
+            'kode_pos' => 'required'
+        ])) {
+           return redirect()->to('/profile');
+        }
+  
+        $model = new M_profile();
+  
+        $data = [
+            'telepon' => $this->request->getPost('telepon'),
+            'email' => $this->request->getPost('email'),
+            'alamat' => $this->request->getPost('alamat'),
+            'kota' => $this->request->getPost('kota'),
+            'provinsi' => $this->request->getPost('provinsi'),
+            'kode_pos' => $this->request->getPost('kode_pos'),
+        ];
+  
+        $model->update($id, $data);
+  
+        return redirect()->to('/profile');
      }
 }

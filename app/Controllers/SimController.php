@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\M_Login;
 use App\Models\M_kegiatan;
 use App\Models\M_pengumuman;
+use App\Models\M_profile;
 use App\Models\M_kasmasuk;
 use App\Models\M_kaskeluar;
 use App\Models\M_berita;
@@ -16,7 +17,7 @@ class SimController extends BaseController
 {
     public function index()
     {  
-        return view('admin/login');
+        return view('login');
     }
     public function cek_login()
     {
@@ -25,16 +26,16 @@ class SimController extends BaseController
         $username = $this->request->getPost('uname');
         $cekUsername = $modelLogin->getAdmin(['username'=>$username])->getNumRows();
         if($cekUsername == 0){
-            return redirect()->to('admin/login');
+            return redirect()->to('login');
         }else{
             $dataUser = $modelLogin->getAdmin(['username'=>$username])->getRowArray();
             $password = $this->request->getPost('password');
             $verifyPassword = password_verify($password, $dataUser['password']);
             if (!$verifyPassword) {
                 // code...
-                return view('admin/login');
+                return view('login');
             }else{
-            return view('admin/dashboard');
+            return redirect()->to('dashboard');
         }
         }
     }
@@ -49,6 +50,7 @@ class SimController extends BaseController
         ];
         return view('admin/dashboard', $data);
     }
+    
     public function kegiatan()
     {
         $kegiatanModel = new M_kegiatan();
@@ -153,32 +155,11 @@ public function save_p()
    
          return redirect()->to('/pengumuman');
     }
-public function save_b()
-    {
-        if (!$this->validate([
-            'judul_berita' => 'required',
-            'slug_berita' => 'required',
-            'tanggal' => 'required'
-         ])) {
-            return redirect()->to('/cberita');
-         }
-   
-         $model = new M_berita();
-   
-         $data = [
-            'judul_berita' => $this->request->getPost('judul_berita'),
-            'slug_berita' => $this->request->getPost('slug_berita'),
-            'tanggal' => $this->request->getPost('tanggal'),
-         ];
-   
-         $model->save($data);
-   
-         return redirect()->to('/berita');
-    }
     
     public function save_k()
     {
         if (!$this->validate([
+            'image_url' => 'required',
             'nama_ustad' => 'required',
             'nama_kajian' => 'required',
             'hari' => 'required',
@@ -190,6 +171,7 @@ public function save_b()
          $model = new M_kegiatan();
    
          $data = [
+            'image_url' => $this->request->getPost('image_url'),
             'nama_ustad' => $this->request->getPost('nama_ustad'),
             'nama_kajian' => $this->request->getPost('nama_kajian'),
             'hari' => $this->request->getPost('hari'),
@@ -206,13 +188,6 @@ public function save_b()
   
         $model->delete($id);
         return redirect()->to('/kegiatan');
-     }
-
-     public function delete_b($id) {
-        $model = new M_berita();
-  
-        $model->delete($id);
-        return redirect()->to('/berita');
      }
 
     public function delete_p($id) {
@@ -232,17 +207,6 @@ public function save_b()
   
         return view('admin/crud/edit_k', $data);
      }
-     
-     public function edit_b($id){
-        $model = new M_berita();
-        $berita = $model->find($id);
-  
-        $data = [
-           'berita' => $berita
-        ];
-  
-        return view('admin/crud/edit_b', $data);
-     }
      public function edit_p($id){
         $model = new M_pengumuman();
         $pengumuman = $model->find($id);
@@ -257,6 +221,7 @@ public function save_b()
      public function update_k($id)
      {
         if (!$this->validate([
+            'image_url' => 'required',
             'nama_ustad' => 'required',
             'nama_kajian' => 'required',
             'hari' => 'required',
@@ -268,38 +233,17 @@ public function save_b()
         $model = new M_kegiatan();
   
         $data = [
+            'image_url' => $this->request->getPost('image_url'),
             'nama_ustad' => $this->request->getPost('nama_ustad'),
             'nama_kajian' => $this->request->getPost('nama_kajian'),
             'hari' => $this->request->getPost('hari'),
             'judul_kajian' => $this->request->getPost('judul_kajian'),
+            'foto_pemateri' => $this->request->getPost('foto_pemateri')
         ];
   
         $model->update($id, $data);
   
         return redirect()->to('/kegiatan');
-     }
-     
-     public function update_b($id)
-     {
-        if (!$this->validate([
-            'judul_berita' => 'required',
-            'slug_berita' => 'required',
-            'tanggal' => 'required'
-        ])) {
-           return redirect()->to('/cberita');
-        }
-  
-        $model = new M_berita();
-  
-        $data = [
-            'judul_berita' => $this->request->getPost('judul_berita'),
-            'slug_berita' => $this->request->getPost('slug_berita'),
-            'tanggal' => $this->request->getPost('tanggal'),
-        ];
-  
-        $model->update($id, $data);
-  
-        return redirect()->to('/berita');
      }
      
      public function update_p($id)
@@ -333,13 +277,15 @@ public function save_b()
     {
         return view('admin/crud/cpengumuman');
     }
-        public function cberita()
-    {
-        return view('admin/crud/cberita');
-    }
-        public function profile()
+        public function profile($id=1)
     {  
-        return view('admin/profile');
+        $model = new M_profile();
+        $profile = $model->find($id);
+  
+        $data = [
+           'profile' => $profile
+        ];
+        return view('admin/profile', $data);
     }
     public function berita()
     {
