@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="pengumuman">
+          <a class="nav-link " href="http://localhost:8080/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,18 +62,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="berita">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Berita</span>
+            <span class="nav-link-text ms-1">Dakwah</span>
           </a>
         </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="profile">
+          <a class="nav-link " href="">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="login">
+          <a class="nav-link " href="http://localhost:8080/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -115,11 +115,6 @@
 <form class="card-body" action="storekgt" method="post" enctype="multipart/form-data">
    <div class="col-md-10">
   <div class="form-group">
-    <label for="image_url">Masukkan Url Foto</label>
-    <input type="text" class="form-control" id="image_url" name="image_url" required>
-  </div>
-   <div class="col-md-10">
-  <div class="form-group">
     <label for="nama_ustad">Nama Ustad</label>
     <input type="text" class="form-control" id="nama_ustad" name="nama_ustad" required>
   </div>
@@ -143,7 +138,7 @@
   </div>
   <div class="col-md-10">
     <div class="form-group">
-    <label for="judul_kajian">Deskripsi Kajian</label>
+    <label for="deskripsi">Deskripsi Kajian</label>
     <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" placeholder="Deskripsi" required></textarea>
   </div>
 </div>
