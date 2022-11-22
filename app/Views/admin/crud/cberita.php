@@ -46,7 +46,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="kegiatan">
+          <a class="nav-link " href="kegiatan">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="pengumuman">
+          <a class="nav-link " href="http://localhost:8080/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -62,7 +62,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="berita">
+          <a class="nav-link active " href="berita">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
@@ -73,7 +73,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="">
+          <a class="nav-link " href="profile">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="login">
+          <a class="nav-link " href="http://localhost:8080/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -98,9 +98,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Control Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Kas Keluar</li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Berita</li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Kas Keluar</h6>
+          <h6 class="font-weight-bolder text-white mb-0">Berita</h6>
         </nav>
       </div>
     </nav>
@@ -112,20 +112,25 @@
             <div class="card-header pb-0">
               <h6>Tambah Data Disini</h6>
             </div>
-<form action="admin/save-berita" method="post">
+<form class="card-body" action="admin/save-berita" method="post">
   <div class="form-group">
     <label for="judul_berita">Judul Berita</label>
-    <input type="text" class="form-control" id="judul_berita" name="judul_berita">
+    <input type="text" class="form-control" id="judul_berita" name="judul_berita" required>
   </div>
   <div class="form-group">
     <label for="slug_berita">Slug Berita</label>
-    <input type="text" class="form-control" id="slug_berita" name="slug_berita">
+    <input type="text" class="form-control" id="slug_berita" name="slug_berita" required>
   </div>
-    <div class="form-group">
+  <div class="form-group">
     <label for="tanggal">Tanggal</label>
-    <input type="date" class="form-control" id="tanggal" name="tanggal">
-  
+    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+  </div>
+  <div class="form-group">
+    <label for="deskripsi">Deskripsi Berita</label>
+    <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" required></textarea>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+   <a href="/berita"><button type="button" class="btn btn-warning">Kembali</button></a>
 </form>
           </div>
         </div>
