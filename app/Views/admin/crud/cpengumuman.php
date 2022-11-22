@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -115,15 +115,19 @@
 <form class="card-body" action="storepgn" method="post">
   <div class="form-group">
     <label for="Judul_Pengumuman">Judul Pengumuman</label>
-    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman">
+    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman" required>
   </div>
   <div class="form-group">
     <label for="Slug_Pengumuman">Slug Pengumuman</label>
-    <input type="text" class="form-control" id="Slug_Pengumuman" name="Slug_Pengumuman">
+    <input type="text" class="form-control" id="Slug_Pengumuman" name="Slug_Pengumuman" required>
   </div>
     <div class="form-group">
     <label for="Tanggal">Tanggal</label>
-    <input type="date" class="form-control" id="Tanggal" name="Tanggal">
+    <input type="date" class="form-control" id="Tanggal" name="Tanggal" required>
+  </div>
+      <div class="form-group">
+    <label for="deskripsi">Deskripsi Pengumuman</label>
+    <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" placeholder="Deskripsi" required></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="pengumuman"><button type="button" class="btn btn-warning">Kembali</button></a>
