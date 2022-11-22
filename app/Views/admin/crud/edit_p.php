@@ -54,7 +54,7 @@
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link active " href="pengumuman">
+          <a class="nav-link active " href="http://localhost:8081/pengumuman">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="login">
+          <a class="nav-link " href="http://localhost:8081/login">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
             <i class="ni ni-button-power text-dark text-sm opacity-10"></i>
             </div>
@@ -112,18 +112,22 @@
             <div class="card-header pb-0">
               <h6>Edit Data Disini</h6>
             </div>
-<form action="/admin/update-userp/<?= $pengumuman['Id_Pengumuman'] ?>" method="post">
+<form class="card-body" action="/admin/update-userp/<?= $pengumuman['Id_Pengumuman'] ?>" method="post">
   <div class="form-group">
     <label for="Judul_Pengumuman">Judul Pengumuman</label>
-    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman" value="<?= $pengumuman['Judul_Pengumuman'] ?>">
+    <input type="text" class="form-control" id="Judul_Pengumuman" name="Judul_Pengumuman" value="<?= $pengumuman['Judul_Pengumuman'] ?>" required>
   </div>
   <div class="form-group">
     <label for="Slug_Pengumuman">Slug Pengumuman</label>
-    <input type="text" class="form-control" id="Slug_Pengumuman" name="Slug_Pengumuman" value="<?= $pengumuman['Slug_Pengumuman'] ?>">
+    <input type="text" class="form-control" id="Slug_Pengumuman" name="Slug_Pengumuman" value="<?= $pengumuman['Slug_Pengumuman'] ?>" required>
   </div>
     <div class="form-group">
     <label for="Tanggal">Tanggal</label>
-    <input type="date" class="form-control" id="Tanggal" name="Tanggal" value="<?= $pengumuman['Tanggal'] ?>">
+    <input type="date" class="form-control" id="Tanggal" name="Tanggal" value="<?= $pengumuman['Tanggal'] ?>" required>
+  </div>
+      <div class="form-group">
+    <label for="deskripsi">Deskripsi Pengumuman</label>
+    <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" required><?= $pengumuman['deskripsi'] ?></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <a href="/pengumuman"><button type="button" class="btn btn-warning">Kembali</button></a>
