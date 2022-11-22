@@ -12,7 +12,7 @@ class M_pengumuman extends Model {
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['Judul_Pengumuman', 'Slug_Pengumuman', 'Tanggal'];
+    protected $allowedFields        = ['Judul_Pengumuman', 'Slug_Pengumuman', 'Tanggal', 'deskripsi'];
 
         public function getPengumuman($where = false){
             if($where === false){
