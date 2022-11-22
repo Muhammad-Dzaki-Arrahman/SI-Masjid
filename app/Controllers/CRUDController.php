@@ -20,18 +20,16 @@ class CRUDController extends BaseController
     }
        public function storekgt(){
     if(!$this->validate([
-        'image_url' => 'required',
         'nama_ustad' => 'required',
         'nama_kajian' => 'required',
         'hari' =>'required',
         'judul_kajian' => 'required',
-        'deskripsi' => 'required',
+        'deskripsi' => 'required'
     ])) {
         return redirect()->to('ckegiatan');
     }
         $kegiatanModel = new M_kegiatan();
         $data = [
-            'image_url' => $this->request->getPost('image_url'),
             'nama_ustad' => $this->request->getPost('nama_ustad'),
             'nama_kajian' => $this->request->getPost('nama_kajian'),
             'hari' => $this->request->getPost('hari'),
@@ -47,14 +45,16 @@ class CRUDController extends BaseController
         'Judul_Pengumuman' => 'required',
         'Slug_Pengumuman' => 'required',
         'Tanggal' =>'required',
+        'deskripsi' => 'required'
     ])) {
-        return redirect()->to('admin/crud/cpengumuman');
+        return redirect()->to('/cpengumuman');
     }
         $pengumumanModel = new M_pengumuman();
         $data = [
             'Judul_Pengumuman' => $this->request->getPost('Judul_Pengumuman'),
             'Slug_Pengumuman' => $this->request->getPost('Slug_Pengumuman'),
             'Tanggal' => $this->request->getPost('Tanggal'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
         ];
 
         $pengumumanModel->save($data);
@@ -72,7 +72,8 @@ class CRUDController extends BaseController
         if (!$this->validate([
             'judul_berita' => 'required',
             'slug_berita' => 'required',
-            'tanggal' => 'required'
+            'tanggal' => 'required',
+            'deskripsi' => 'required'
          ])) {
             return redirect()->to('/cberita');
          }
@@ -83,6 +84,7 @@ class CRUDController extends BaseController
             'judul_berita' => $this->request->getPost('judul_berita'),
             'slug_berita' => $this->request->getPost('slug_berita'),
             'tanggal' => $this->request->getPost('tanggal'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
          ];
    
          $model->save($data);
@@ -106,9 +108,10 @@ class CRUDController extends BaseController
         if (!$this->validate([
             'judul_berita' => 'required',
             'slug_berita' => 'required',
-            'tanggal' => 'required'
+            'tanggal' => 'required',
+            'deskripsi' => 'required'
         ])) {
-           return redirect()->to('/cberita');
+           return redirect()->to('/edit_b');
         }
   
         $model = new M_berita();
@@ -117,6 +120,7 @@ class CRUDController extends BaseController
             'judul_berita' => $this->request->getPost('judul_berita'),
             'slug_berita' => $this->request->getPost('slug_berita'),
             'tanggal' => $this->request->getPost('tanggal'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
         ];
   
         $model->update($id, $data);
@@ -139,7 +143,7 @@ class CRUDController extends BaseController
             'tanggal' =>'required',
             'keterangan' => 'required'
         ])) {
-            return redirect()->to('admin/crud/ckasmasuk');
+            return redirect()->to('/ckasmasuk');
         }
             $kasmasukModel = new M_kasmasuk();
             $data = [
@@ -199,7 +203,7 @@ class CRUDController extends BaseController
                 'tanggal' =>'required',
                 'keterangan' => 'required'
             ])) {
-                return redirect()->to('admin/crud/ckaskeluar');
+                return redirect()->to('/ckaskeluar');
             }
                 $kaskeluarModel = new M_kaskeluar();
                 $data = [
@@ -259,7 +263,7 @@ class CRUDController extends BaseController
                 'jenis_zakat' =>'required',
                 'jumlah' => 'required'
             ])) {
-                return redirect()->to('czakat');
+                return redirect()->to('/czakat');
             }
                 $zakatModel = new M_zakat();
                 $data = [
@@ -320,7 +324,7 @@ class CRUDController extends BaseController
                     'jumlah_kk' =>'required',
                     'total' => 'required'
                 ])) {
-                    return redirect()->to('admin/crud/ctotal');
+                    return redirect()->to('/ctotal');
                 }
                     $totalModel = new M_total();
                     $data = [
