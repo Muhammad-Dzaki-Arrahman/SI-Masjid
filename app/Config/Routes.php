@@ -61,25 +61,44 @@ $routes->post('/dashboard', 'SimController::dashboard');
 $routes->get('/ckegiatan', 'SimController::ckegiatan');
 $routes->post('/storekgt', 'CRUDController::storekgt');
 $routes->get('/cpengumuman', 'SimController::cpengumuman');
-$routes->get('/cberita', 'SimController::cberita');
+$routes->get('/cberita', 'CRUDController::cberita');
+$routes->post('/admin/save-berita', 'CRUDController::save_b');
 $routes->post('/storepgn', 'CRUDController::storepgn');
-$routes->post('/admin/save-berita', 'SimController::save_b');
 $routes->get('/admin/delete-userk/(:num)', 'SimController::delete_k/$1');
 $routes->get('/admin/delete-userp/(:num)', 'SimController::delete_p/$1');
-$routes->get('/admin/delete-userb/(:num)', 'SimController::delete_b/$1');
 $routes->get('/admin/crud/edit_k/(:num)', 'SimController::edit_k/$1');
-$routes->get('/admin/crud/edit_b/(:num)', 'SimController::edit_b/$1');
 $routes->get('/admin/crud/edit_p/(:num)', 'SimController::edit_p/$1');
+$routes->get('/admin/crud/edit_b/(:num)', 'CRUDController::edit_b/$1');
 $routes->post('/admin/update-userk/(:num)', 'SimController::update_k/$1');
-$routes->post('/admin/update-userb/(:num)', 'SimController::update_b/$1');
 $routes->post('/admin/update-userp/(:num)', 'SimController::update_p/$1');
+$routes->post('/admin/update-userb/(:num)', 'CRUDController::update_b/$1');
+$routes->get('/admin/delete-userb/(:num)', 'CRUDController::delete_b/$1');
+$routes->post('/admin/update-userkm/(:num)', 'CRUDController::update_km/$1');
+$routes->get('/admin/crud/edit_km/(:num)', 'CRUDController::edit_km/$1');
+$routes->get('/admin/delete-userkm/(:num)', 'CRUDController::delete_km/$1');
+$routes->post('/admin/update-userkk/(:num)', 'CRUDController::update_kk/$1');
+$routes->get('/admin/crud/edit_kk/(:num)', 'CRUDController::edit_kk/$1');
+$routes->get('/admin/delete-userkk/(:num)', 'CRUDController::delete_kk/$1');
+$routes->post('/admin/update-userz/(:num)', 'CRUDController::update_z/$1');
+$routes->get('/admin/crud/edit_z/(:num)', 'CRUDController::edit_z/$1');
+$routes->get('/admin/delete-userz/(:num)', 'CRUDController::delete_z/$1');
+$routes->post('/admin/update-usert/(:num)', 'CRUDController::update_t/$1');
+$routes->get('/admin/crud/edit_t/(:num)', 'CRUDController::edit_t/$1');
+$routes->get('/admin/delete-usert/(:num)', 'CRUDController::delete_t/$1');
+$routes->post('/admin/update-profile/(:num)', 'CRUDController::update_profile/$1');
+
 
 
 //User
 $routes->get('/home', 'User::home');
 $routes->get('/kajian', 'User::kajian');
+$routes->get('detail-kajian/(:num)', 'User::detail_kajian/$1');
 $routes->get('/user-pengumuman', 'User::pengumuman');
+$routes->get('detail-pengumuman/(:num)', 'User::detail_pengumuman/$1');
+$routes->get('/dakwah', 'User::dakwah');
+$routes->get('detail-dakwah/(:num)', 'User::detail_dakwah/$1');
 $routes->get('/tes', 'User::tes');
+
 
 /*
  * --------------------------------------------------------------------
