@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PET SHOP - Pet Shop Website Template</title>
+    <title>Sistem Informasi Masjid</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
