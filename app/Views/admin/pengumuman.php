@@ -155,8 +155,8 @@
                     <td><?php echo $pgn['Tanggal']; ?></td>
                 <td>
                   <div>
-                  <a href="/admin/crud/edit_p/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-warning mr-3">Edit</button></a>
-                  <a href="/admin/delete-userp/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-danger mr-3">Delete</button></a>
+                  <a href="/admin/crud/edit_p/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-warning mr-3"><i class="fa fa-edit"></i></button></a>
+                  <a href="/admin/delete-userp/<?= $pgn['Id_Pengumuman'] ?>"><button type="button" class="btn btn-danger mr-3"><i class="fas fa-trash"></i></button></a>
                     </form>
                   </div>
                 </td>
@@ -172,7 +172,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer pt-3  ">
+<!--       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
@@ -185,7 +185,7 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
     </div>
   </main>
   <div class="fixed-plugin">
